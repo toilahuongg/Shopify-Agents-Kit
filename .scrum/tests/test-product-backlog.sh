@@ -4,7 +4,13 @@
 
 set -e
 
-SCRUM_DIR=".scrum"
+# Detect if we're running from .scrum or project root
+if [ -f "product-backlog.json" ]; then
+    SCRUM_DIR="."
+else
+    SCRUM_DIR=".scrum"
+fi
+
 BACKLOG_FILE="$SCRUM_DIR/product-backlog.json"
 TEST_RESULTS="$SCRUM_DIR/tests/results/product-backlog-test.log"
 

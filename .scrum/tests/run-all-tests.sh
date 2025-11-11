@@ -2,10 +2,18 @@
 # Scrum Agile System - Comprehensive Test Suite Runner
 # Runs all tests and generates summary report
 
-set -e
+# Don't use set -e so we can capture all test results
+set +e
 
-SCRUM_DIR=".scrum"
-TEST_DIR="$SCRUM_DIR/tests"
+# Detect if we're running from .scrum or project root
+if [ -f "product-backlog.json" ]; then
+    SCRUM_DIR="."
+    TEST_DIR="tests"
+else
+    SCRUM_DIR=".scrum"
+    TEST_DIR="$SCRUM_DIR/tests"
+fi
+
 RESULTS_DIR="$TEST_DIR/results"
 SUMMARY_FILE="$RESULTS_DIR/test-summary.log"
 
@@ -77,9 +85,9 @@ echo "" | tee -a "$SUMMARY_FILE"
 
 # Phase 3: Agent Integration Tests
 echo "=== Phase 3: Agent Integration Tests ===" | tee -a "$SUMMARY_FILE"
-run_test "$TEST_DIR/test-agent-integration.sh" "Agent Integration"
-run_test "$TEST_DIR/test-metrics-calculation.sh" "Metrics Calculation"
-run_test "$TEST_DIR/test-dod-validation.sh" "Definition of Done Validation"
+run_test "$TEST_DIR/test-agent-integration-workflow.sh" "Agent Integration"
+run_test "$TEST_DIR/test-metrics-calculation-workflow.sh" "Metrics Calculation"
+run_test "$TEST_DIR/test-dod-validation-workflow.sh" "Definition of Done Validation"
 echo "" | tee -a "$SUMMARY_FILE"
 
 # Generate summary
