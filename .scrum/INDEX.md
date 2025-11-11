@@ -53,7 +53,13 @@ Located in `../.claude/agents/`:
 
 ## ⚡ Workflows
 
-Located in `../.claude/commands/`:
+Located in `../.claude/commands/scrum/`:
+
+### System Commands
+- **init.md** - `/scrum:init` - Initialize new Scrum project with all artifacts
+- **orchestrator.md** - `/scrum:orchestrator` - Intelligent workflow guide and state analyzer
+
+### Scrum Ceremonies
 - **sprint-planning.md** - `/sprint-planning` - Plan and commit to sprint work
 - **daily-standup.md** - `/daily-standup` - Daily progress synchronization
 - **sprint-review.md** - `/sprint-review` - Demonstrate completed work
