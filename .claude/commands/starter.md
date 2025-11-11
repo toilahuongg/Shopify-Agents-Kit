@@ -77,21 +77,54 @@ Launch shopify-app-ideator agent with:
 [Potential challenges and mitigation strategies]
 ```
 
-## Phase 2: User Approval
+## Phase 1.5: Project Manager Review - Ideation
 
-After the shopify-app-ideator completes its analysis:
+After shopify-app-ideator completes, use the `Task` tool to launch the `project-manager` agent:
 
-1. Present the refined app concept to the user clearly
-2. Highlight key decisions and recommendations
-3. Ask: "Does this refined concept look good? Should I proceed with technical planning and architecture design?"
-4. Wait for user confirmation before proceeding
-5. If user requests changes, re-engage shopify-app-ideator agent with modifications
+```
+Launch project-manager agent with:
+- Review the ideation phase output
+- Check for completeness and quality of the app concept
+- Identify any critical issues, gaps, or unrealistic assumptions
+- Verify market analysis and technical assessment are solid
+- Provide approval recommendation (Proceed / Fix Issues / Conditional)
+```
 
-**Important Decision Point**: Only proceed to technical planning if the user explicitly approves the concept.
+The project-manager will review and present findings in this format:
+- ✅ Strengths of the concept
+- 🔴 Critical Issues (must fix)
+- 🟡 High Priority Issues (should address)
+- ✓ Approval Recommendation
+
+**If Critical Issues Found**: Fix them by re-engaging shopify-app-ideator, then review again.
+
+## Phase 2: User Approval - Ideation Complete
+
+After project-manager approves the ideation phase:
+
+1. Present the refined app concept AND the project-manager review to the user
+2. Highlight key decisions and any issues that were identified/resolved
+3. **MANDATORY CHECKPOINT**: Ask the user:
+
+   "✅ **Phase 1 Complete: Ideation & Validation**
+
+   I've refined your app concept with market analysis and technical assessment.
+
+   **Does this look good to you? Should I proceed to Phase 3: Technical Planning (Architecture, Database, UX, and Framework)?**
+
+   Please review the concept above and reply:
+   - 'Yes' or 'Proceed' to continue
+   - Request specific changes if needed
+   - 'Stop' if you want to pause"
+
+4. **WAIT for user confirmation before proceeding** - Do NOT continue without explicit approval
+5. If user requests changes, re-engage shopify-app-ideator agent with modifications and ask for approval again
+
+**Important Decision Point**: Only proceed to Phase 3 if the user explicitly approves the concept.
 
 ## Phase 3: Technical Planning
 
-Once the concept is approved, launch multiple specialist agents in parallel or sequence to create comprehensive technical plans:
+Once the concept is approved, launch multiple specialist agents in sequence to create comprehensive technical plans:
 
 ### 3A. Solution Architecture
 
@@ -155,7 +188,77 @@ Input context:
 [Infrastructure and deployment approach]
 ```
 
-### 3B. UX Design Planning
+### 3B. Database Design (MongoDB)
+
+Use the `Task` tool to launch the `mongodb-expert` agent:
+
+```
+Launch mongodb-expert agent with:
+- Design MongoDB schema for all data entities
+- Define collections and document structures
+- Plan embedding vs referencing strategies for relationships
+- Design indexes for query optimization
+- Plan data validation and constraints
+- Define aggregation pipelines for complex queries
+- Address scalability (sharding strategy if needed)
+- Plan backup and data migration strategies
+
+Input context:
+- App concept and features from Phase 1
+- Data architecture from solution-architect
+- Data flow and entity relationships
+```
+
+**MongoDB Design Output Structure**:
+```markdown
+## MongoDB Database Design
+
+### Collections Overview
+[List of all MongoDB collections needed]
+
+### Schema Definitions
+
+#### Collection: [name]
+```javascript
+{
+  _id: ObjectId,
+  field1: Type,  // Description
+  field2: {
+    nested: Type
+  },
+  // ... other fields
+}
+```
+- **Purpose**: [What this collection stores]
+- **Relationships**: [References to other collections]
+- **Indexes**: [Required indexes for performance]
+- **Validation**: [Schema validation rules]
+
+### Data Relationships
+- [Entity A] → [Entity B]: [Embedded/Referenced, reasoning]
+
+### Indexing Strategy
+1. Collection: [name]
+   - Index: [field(s)]
+   - Purpose: [Query optimization reason]
+   - Type: [Single/Compound/Text/Geospatial]
+
+### Aggregation Pipelines
+[Common aggregation queries needed]
+
+### Scalability Considerations
+- Sharding strategy: [If needed]
+- Data growth projections: [Estimates]
+- Query patterns: [Most frequent queries]
+
+### Data Validation Rules
+[Mongoose/MongoDB schema validation]
+
+### Migration Strategy
+[How to set up initial data and handle future changes]
+```
+
+### 3C. UX Design Planning
 
 Use the `Task` tool to launch the `ux-design-expert` agent:
 
@@ -211,7 +314,7 @@ Input context:
 [WCAG compliance requirements and implementation notes]
 ```
 
-### 3C. Remix Framework Planning
+### 3D. Remix Framework Planning
 
 Use the `Task` tool to launch the `remix-expert` agent:
 
@@ -271,9 +374,36 @@ app/
 - Code Splitting: [Lazy loading strategy]
 ```
 
+## Phase 3 Checkpoint: User Approval - Technical Planning Complete
+
+After completing all technical planning (Architecture, Database, UX, and Remix):
+
+1. Present a summary of all technical plans
+2. **MANDATORY CHECKPOINT**: Ask the user:
+
+   "✅ **Phase 3 Complete: Technical Planning**
+
+   I've created comprehensive technical plans:
+   - ✅ System Architecture (solution-architect)
+   - ✅ MongoDB Database Design (mongodb-expert)
+   - ✅ UX Design Plan (ux-design-expert)
+   - ✅ Remix Implementation Plan (remix-expert)
+
+   **Does this technical planning look good? Should I proceed to Phase 4: Task Planning (creating implementation todos)?**
+
+   Please review the plans above and reply:
+   - 'Yes' or 'Proceed' to continue
+   - Request specific changes to any plan if needed
+   - 'Stop' if you want to pause"
+
+3. **WAIT for user confirmation before proceeding** - Do NOT continue without explicit approval
+4. If user requests changes, re-engage the appropriate specialist agent(s) and ask for approval again
+
+**Important Decision Point**: Only proceed to Phase 4 if the user explicitly approves all technical plans.
+
 ## Phase 4: Task Planning
 
-After all technical planning is complete, use the `Task` tool to launch the `todo-manager` agent:
+After user approves Phase 3, use the `Task` tool to launch the `todo-manager` agent:
 
 ```
 Launch todo-manager agent with:
@@ -304,9 +434,36 @@ The todo-manager will create a comprehensive task list organized by implementati
 - Estimated complexity (if applicable)
 - Technical notes or considerations
 
+## Phase 4 Checkpoint: User Approval - Task Planning Complete
+
+After todo-manager creates the implementation todos:
+
+1. Present the complete task list organized by implementation phases
+2. **MANDATORY CHECKPOINT**: Ask the user:
+
+   "✅ **Phase 4 Complete: Task Planning**
+
+   I've created a comprehensive implementation task list with:
+   - Clear, actionable todos
+   - Acceptance criteria for each task
+   - Dependencies and sequencing
+   - Organized by implementation phases
+
+   **Does this task breakdown look good? Should I proceed to Phase 5: Documentation (creating project docs)?**
+
+   Please review the task list above and reply:
+   - 'Yes' or 'Proceed' to continue
+   - Request adjustments to the task list if needed
+   - 'Stop' if you want to pause"
+
+3. **WAIT for user confirmation before proceeding** - Do NOT continue without explicit approval
+4. If user requests changes, re-engage todo-manager to adjust the task list and ask for approval again
+
+**Important Decision Point**: Only proceed to Phase 5 if the user explicitly approves the task list.
+
 ## Phase 5: Documentation
 
-Use the `Task` tool to launch the `technical-documentation-writer` agent:
+After user approves Phase 4, use the `Task` tool to launch the `technical-documentation-writer` agent:
 
 ```
 Launch technical-documentation-writer agent with:
@@ -337,13 +494,43 @@ The technical-documentation-writer will create:
 5. **API.md** - API endpoints and usage (if applicable)
 6. **CONTRIBUTING.md** - Guidelines for contributors
 
+## Phase 5 Checkpoint: User Approval - Documentation Complete
+
+After technical-documentation-writer creates all project documentation:
+
+1. Present a summary of all documentation created
+2. **MANDATORY CHECKPOINT**: Ask the user:
+
+   "✅ **Phase 5 Complete: Documentation**
+
+   I've created comprehensive project documentation:
+   - ✅ README.md - Project overview and quick start
+   - ✅ ARCHITECTURE.md - System design and technical decisions
+   - ✅ DEVELOPMENT.md - Setup and coding standards
+   - ✅ DEPLOYMENT.md - Deployment guide
+   - ✅ API.md - API documentation (if applicable)
+   - ✅ CONTRIBUTING.md - Contribution guidelines
+
+   **Does the documentation look complete? Should I proceed to Phase 6: Handoff (final summary and next steps)?**
+
+   Please review the documentation and reply:
+   - 'Yes' or 'Proceed' to continue
+   - Request changes to any documentation if needed
+   - 'Stop' if you want to pause"
+
+3. **WAIT for user confirmation before proceeding** - Do NOT continue without explicit approval
+4. If user requests changes, re-engage technical-documentation-writer to update docs and ask for approval again
+
+**Important Decision Point**: Only proceed to Phase 6 if the user explicitly approves the documentation.
+
 ## Phase 6: Handoff & Next Steps
 
-After all documentation is created:
+After user approves Phase 5, prepare the final handoff:
 
 1. **Summarize What Was Created**:
    - Validated app concept with market analysis
    - Complete system architecture with technology decisions
+   - MongoDB database design with schemas and indexing
    - UX design plan with user flows and component structure
    - Remix implementation roadmap
    - Prioritized implementation todos
@@ -387,33 +574,47 @@ After all documentation is created:
 
 **Workflow Sequence**:
 ```
-1. shopify-app-ideator (READ-ONLY)
+Phase 1: shopify-app-ideator (READ-ONLY) → Idea refinement
    ↓
-   User approval checkpoint
+   ✋ User approval checkpoint
    ↓
-2. Parallel Planning:
+Phase 3: Sequential Technical Planning:
    - solution-architect → System architecture
+   - mongodb-expert → Database design
    - ux-design-expert → UX design plan
    - remix-expert → Framework implementation plan
    ↓
-3. todo-manager → Implementation task breakdown
+   ✋ User approval checkpoint
    ↓
-4. technical-documentation-writer → Project documentation
+Phase 4: todo-manager → Implementation task breakdown
    ↓
-5. Handoff with next steps
+   ✋ User approval checkpoint
+   ↓
+Phase 5: technical-documentation-writer → Project documentation
+   ↓
+   ✋ User approval checkpoint
+   ↓
+Phase 6: Handoff with next steps
 ```
+
+**Key Features**:
+- ✋ **5 User Approval Checkpoints** - User must approve each phase before proceeding
+- 🔄 **Sequential Planning** - Each planning agent builds on previous outputs
+- 📊 **Comprehensive Coverage** - Architecture, Database, UX, Framework, Tasks, Docs
+- 🚀 **Ready-to-Implement** - Complete blueprint for development
 
 ## Quality Checkpoints
 
 Throughout the workflow, ensure:
 - ✅ App idea is validated against market needs
 - ✅ Architecture is scalable and maintainable
+- ✅ Database design is optimized with proper indexes
 - ✅ UX design follows accessibility standards
 - ✅ Remix plan follows framework best practices
 - ✅ Todos are specific and actionable
 - ✅ Documentation is comprehensive and clear
 - ✅ All technical decisions are documented with rationale
-- ✅ User is informed at each major phase
+- ✅ User approves each phase before proceeding
 
 ## Example Workflow
 
@@ -429,14 +630,20 @@ Phase 1 - Ideation:
   - Market: Medium-to-large Shopify merchants with 100+ products
   - Complexity: Medium-High (ML integration)
 
-Phase 2 - Approval:
+Phase 2 - Approval Checkpoint:
 → Present concept to user
-→ User approves: "Yes, let's proceed"
+→ "✅ Phase 1 Complete: Ideation & Validation"
+→ User: "Yes, proceed to technical planning"
 
 Phase 3 - Technical Planning:
 → Launch solution-architect
-  - Architecture: Remix + PostgreSQL + OpenAI API
-  - Components: Web app, webhook handlers, ML service
+  - Architecture: Remix + MongoDB + OpenAI API
+  - Components: Web app, webhook handlers, ML service, API layer
+
+→ Launch mongodb-expert
+  - Collections: products, tags, taggingJobs, merchants
+  - Indexes: productId, merchantId, status fields
+  - Embedding strategy: tags embedded in products, jobs referenced
 
 → Launch ux-design-expert
   - User flows: Product import → AI tagging → Review → Apply
@@ -448,27 +655,39 @@ Phase 3 - Technical Planning:
   - Auth: Shopify OAuth + session cookies
   - Forms: Progressive enhancement for tag management
 
+→ Approval Checkpoint:
+→ "✅ Phase 3 Complete: Technical Planning"
+→ User: "Looks good, create the todos"
+
 Phase 4 - Task Planning:
 → Launch todo-manager
-→ 25 todos created across:
+→ 27 todos created across:
   - Project setup (3 todos)
-  - Database & models (4 todos)
+  - MongoDB schema & models (5 todos)
   - Shopify integration (5 todos)
   - AI tagging service (6 todos)
-  - UI implementation (5 todos)
+  - UI implementation (6 todos)
   - Testing & deployment (2 todos)
+
+→ Approval Checkpoint:
+→ "✅ Phase 4 Complete: Task Planning"
+→ User: "Perfect, generate the docs"
 
 Phase 5 - Documentation:
 → Launch technical-documentation-writer
 → Generated:
   - README.md (project overview, quick start)
-  - ARCHITECTURE.md (system design, ML integration)
+  - ARCHITECTURE.md (system design, ML integration, MongoDB schema)
   - DEVELOPMENT.md (setup, coding standards)
   - DEPLOYMENT.md (deployment guide)
   - API.md (webhook endpoints)
 
+→ Approval Checkpoint:
+→ "✅ Phase 5 Complete: Documentation"
+→ User: "Great, show me the handoff"
+
 Phase 6 - Handoff:
-→ Summary of deliverables
+→ Summary of all deliverables
 → Next steps: "Start with todo #1: Initialize Remix project"
 → Recommended: Use /shopify-app-fe and /shopify-app-be for implementation
 ```
@@ -477,20 +696,28 @@ Phase 6 - Handoff:
 
 1. **READ-ONLY Agent**: The shopify-app-ideator agent will NOT create or modify files. It provides analysis and recommendations only.
 
-2. **User Approval is Required**: Do not proceed to technical planning without explicit user approval of the refined concept.
+2. **MANDATORY User Approvals**: There are 5 approval checkpoints. You MUST wait for explicit user approval at each checkpoint before proceeding to the next phase:
+   - After Phase 1: Ideation
+   - After Phase 3: Technical Planning
+   - After Phase 4: Task Planning
+   - After Phase 5: Documentation
+   - (Phase 6 is the final handoff)
 
-3. **Comprehensive Planning**: All technical planning (architecture, UX, framework) should be complete before creating todos.
+3. **Sequential Planning**: Technical planning agents run in sequence (Architecture → Database → UX → Framework), each building on previous outputs.
 
-4. **Documentation Last**: Generate documentation after all planning is complete to ensure it accurately reflects all decisions.
+4. **MongoDB Integration**: The mongodb-expert agent is always included to design database schemas, regardless of whether MongoDB is mentioned in the initial idea.
 
-5. **Clear Handoff**: Provide clear next steps and guidance on how to start implementation with existing workflow commands.
+5. **Documentation Last**: Generate documentation after all planning is complete to ensure it accurately reflects all decisions.
+
+6. **Clear Handoff**: Provide clear next steps and guidance on how to start implementation with existing workflow commands.
 
 ## Success Criteria
 
 The workflow is complete when:
 - ✅ App idea is validated and refined
-- ✅ User has approved the concept
+- ✅ User has approved all 5 checkpoints
 - ✅ Complete system architecture is designed
+- ✅ MongoDB database schema is designed
 - ✅ UX design plan is created
 - ✅ Remix implementation plan is defined
 - ✅ Implementation todos are created and prioritized
