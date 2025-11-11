@@ -4,7 +4,10 @@ Quick navigation to all documentation and resources.
 
 ## 🚀 Getting Started
 
-**Start Here**: [README.md](README.md) - Complete system guide with quick start
+**New to Scrum?** Start here:
+- [USER_GUIDE.md](USER_GUIDE.md) - **Complete step-by-step guide from idea to first sprint** ⭐
+- [QUICK_START.md](QUICK_START.md) - 5-minute quick start guide
+- [README.md](README.md) - Complete system guide with reference
 
 ## 📚 Core Documentation
 

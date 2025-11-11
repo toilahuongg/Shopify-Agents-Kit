@@ -6,11 +6,14 @@ const args = process.argv.slice(2);
 
 async function setup() {
   const sourceClaude = path.resolve(__dirname, '.claude'); // thư mục trong package
+  const sourceScrum = path.resolve(__dirname, '.scrum'); // thư mục trong package
   const destination = process.cwd(); // thư mục đang chạy lệnh
   // make folder .claude if not exist
   try {
     await fs.ensureDir(path.join(destination, '.claude'));
+    await fs.ensureDir(path.join(destination, '.scrum'));
     await fs.copy(sourceClaude, path.join(destination, '.claude'), { overwrite: true, errorOnExist: true });
+    await fs.copy(sourceScrum, path.join(destination, '.scrum'), { overwrite: true, errorOnExist: true });
     console.log('Finished setup for Shopify Agents Kit');
   } catch (err) {
     if (err.code === 'EEXIST') {
