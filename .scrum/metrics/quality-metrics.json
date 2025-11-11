@@ -1,0 +1,248 @@
+{
+  "projectName": "Shopify App Development",
+  "teamName": "Core Development Team",
+  "reportingPeriod": {
+    "start": "2024-01-22",
+    "end": "2024-02-05",
+    "sprints": ["sprint-001"]
+  },
+  "codeQuality": {
+    "codeReview": {
+      "totalReviews": 15,
+      "averageTurnaroundTime": 4,
+      "reviewCoverage": 100,
+      "approvalRate": 95,
+      "averageCommentsPerReview": 3.2,
+      "criticalIssuesFound": 2,
+      "majorIssuesFound": 5,
+      "minorIssuesFound": 12,
+      "trends": {
+        "turnaroundTrend": "stable",
+        "qualityTrend": "improving",
+        "issuesTrend": "decreasing"
+      }
+    },
+    "testing": {
+      "unitTests": {
+        "coverage": 85,
+        "totalTests": 150,
+        "passingTests": 148,
+        "failingTests": 0,
+        "skippedTests": 2,
+        "passRate": 98.67
+      },
+      "integrationTests": {
+        "coverage": 75,
+        "totalTests": 45,
+        "passingTests": 44,
+        "failingTests": 0,
+        "skippedTests": 1,
+        "passRate": 97.78
+      },
+      "e2eTests": {
+        "coverage": 60,
+        "totalTests": 20,
+        "passingTests": 20,
+        "failingTests": 0,
+        "skippedTests": 0,
+        "passRate": 100
+      },
+      "manualTesting": {
+        "testCasesExecuted": 25,
+        "testCasesPassed": 25,
+        "testCasesFailed": 0,
+        "passRate": 100
+      }
+    },
+    "staticAnalysis": {
+      "lintingErrors": 0,
+      "lintingWarnings": 3,
+      "complexityScore": 6.5,
+      "maintainabilityIndex": 78,
+      "duplicateCodePercentage": 2.1
+    }
+  },
+  "defectMetrics": {
+    "summary": {
+      "totalDefects": 2,
+      "criticalDefects": 0,
+      "majorDefects": 1,
+      "minorDefects": 1,
+      "defectDensity": 0.06,
+      "defectsPerStoryPoint": 0.06
+    },
+    "defectsBySource": {
+      "production": 0,
+      "staging": 1,
+      "development": 1,
+      "codeReview": 0
+    },
+    "defectResolution": {
+      "totalResolved": 2,
+      "totalOpen": 0,
+      "averageResolutionTime": 1.5,
+      "resolutionRate": 100,
+      "byPriority": {
+        "critical": {
+          "count": 0,
+          "averageResolutionTime": 0
+        },
+        "major": {
+          "count": 1,
+          "averageResolutionTime": 2.0
+        },
+        "minor": {
+          "count": 1,
+          "averageResolutionTime": 1.0
+        }
+      }
+    },
+    "defectPrevention": {
+      "foundInCodeReview": 0,
+      "foundInTesting": 2,
+      "foundInProduction": 0,
+      "preventionRate": 100,
+      "note": "All defects caught before production"
+    }
+  },
+  "technicalDebt": {
+    "summary": {
+      "totalDebtHours": 12,
+      "debtAsPercentageOfCapacity": 15,
+      "trend": "decreasing"
+    },
+    "debtByCategory": {
+      "codeRefactoring": {
+        "hours": 5,
+        "percentage": 41.67,
+        "priority": "medium"
+      },
+      "testingGaps": {
+        "hours": 3,
+        "percentage": 25,
+        "priority": "high"
+      },
+      "documentation": {
+        "hours": 2,
+        "percentage": 16.67,
+        "priority": "low"
+      },
+      "performanceOptimization": {
+        "hours": 2,
+        "percentage": 16.67,
+        "priority": "medium"
+      }
+    },
+    "debtManagement": {
+      "hoursAddressed": 12,
+      "hoursAdded": 8,
+      "netChange": -4,
+      "paydownRate": "good",
+      "targetRatio": 20,
+      "currentRatio": 15,
+      "status": "below-target"
+    },
+    "recommendations": [
+      "Continue current debt paydown approach",
+      "Maintain technical debt ratio below 20%",
+      "Prioritize testing gaps in next sprint",
+      "Schedule refactoring in small increments"
+    ]
+  },
+  "performanceMetrics": {
+    "buildTimes": {
+      "averageBuildTime": 45,
+      "maxBuildTime": 60,
+      "minBuildTime": 35,
+      "trend": "stable"
+    },
+    "deploymentMetrics": {
+      "averageDeploymentTime": 8,
+      "deploymentFrequency": 12,
+      "deploymentSuccessRate": 100,
+      "rollbackRate": 0
+    },
+    "applicationPerformance": {
+      "averageResponseTime": 180,
+      "p95ResponseTime": 350,
+      "p99ResponseTime": 500,
+      "errorRate": 0.02,
+      "uptimePercentage": 99.9
+    }
+  },
+  "securityMetrics": {
+    "vulnerabilities": {
+      "critical": 0,
+      "high": 0,
+      "medium": 1,
+      "low": 2,
+      "totalOpen": 3,
+      "averageTimeToRemediate": 3.5
+    },
+    "dependencyScan": {
+      "totalDependencies": 150,
+      "outdatedDependencies": 8,
+      "vulnerableDependencies": 1,
+      "lastScanDate": "2024-02-05"
+    },
+    "securityBestPractices": {
+      "inputValidation": "compliant",
+      "authenticationSecurity": "compliant",
+      "dataEncryption": "compliant",
+      "apiSecurity": "compliant",
+      "complianceScore": 95
+    }
+  },
+  "trends": {
+    "codeQualityTrend": "improving",
+    "defectTrend": "stable",
+    "technicalDebtTrend": "decreasing",
+    "performanceTrend": "stable",
+    "securityTrend": "good"
+  },
+  "qualityGoals": {
+    "sprint": {
+      "defectDensity": {
+        "target": 0.1,
+        "actual": 0.06,
+        "status": "achieved"
+      },
+      "testCoverage": {
+        "target": 80,
+        "actual": 85,
+        "status": "achieved"
+      },
+      "codeReviewCoverage": {
+        "target": 100,
+        "actual": 100,
+        "status": "achieved"
+      },
+      "technicalDebtRatio": {
+        "target": 20,
+        "actual": 15,
+        "status": "achieved"
+      }
+    }
+  },
+  "actionableInsights": [
+    "Excellent quality metrics for Sprint 1",
+    "Continue maintaining high code review standards",
+    "Technical debt well managed, below target threshold",
+    "Zero production defects demonstrates strong quality practices",
+    "Consider addressing medium-priority security vulnerability in Sprint 2"
+  ],
+  "recommendations": [
+    "Maintain current quality practices",
+    "Continue paying down technical debt incrementally",
+    "Address testing gaps identified in tech debt analysis",
+    "Update vulnerable dependency in next sprint",
+    "Keep monitoring performance metrics"
+  ],
+  "metadata": {
+    "generatedDate": "2024-02-05T17:00:00Z",
+    "generatedBy": "scrum-metrics-analyzer",
+    "dataQuality": "complete",
+    "confidenceLevel": "high",
+    "nextUpdateDue": "2024-02-19"
+  }
+}

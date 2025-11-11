@@ -1,0 +1,155 @@
+{
+  "projectName": "Shopify App Development",
+  "teamName": "Core Development Team",
+  "reportingPeriod": {
+    "start": "2024-01-22",
+    "end": "2024-02-05",
+    "sprints": ["sprint-001"],
+    "totalDays": 14
+  },
+  "teamMetrics": {
+    "averageVelocity": 31,
+    "velocityStdDev": 0,
+    "predictabilityScore": 85,
+    "throughput": 8,
+    "averageCycleTime": 3.5,
+    "averageLeadTime": 7.2,
+    "workInProgress": {
+      "average": 4,
+      "max": 6,
+      "wipLimitAdherence": 95
+    },
+    "defectRate": 0.5,
+    "technicalDebtRatio": 15
+  },
+  "capacityAnalysis": {
+    "plannedCapacity": 35,
+    "actualCapacity": 35,
+    "utilizationRate": 88.57,
+    "focusFactor": 0.7,
+    "availabilityRate": 89.29,
+    "lostCapacity": {
+      "meetings": 6,
+      "holidays": 4,
+      "unplanned": 0
+    }
+  },
+  "qualityMetrics": {
+    "codeReview": {
+      "averageTurnaroundTime": 4,
+      "reviewCoverage": 100,
+      "approvalRate": 95
+    },
+    "testing": {
+      "testCoverage": 85,
+      "automatedTestPass": 98,
+      "manualTestPass": 100
+    },
+    "defects": {
+      "totalDefects": 2,
+      "defectsPerStoryPoint": 0.06,
+      "averageResolutionTime": 1.5,
+      "criticalDefects": 0
+    },
+    "technicalDebt": {
+      "hoursSpent": 12,
+      "percentageOfCapacity": 15,
+      "trend": "decreasing"
+    }
+  },
+  "collaborationMetrics": {
+    "dailyStandups": {
+      "attendance": 100,
+      "averageDuration": 12,
+      "onTimeStart": 95
+    },
+    "pairProgramming": {
+      "sessions": 5,
+      "hoursSpent": 20,
+      "percentageOfTime": 25
+    },
+    "knowledgeSharing": {
+      "documentationUpdates": 8,
+      "codeReviews": 15,
+      "techTalks": 1
+    }
+  },
+  "individualContributions": {
+    "note": "Individual metrics are tracked for capacity planning only, not for performance evaluation",
+    "teamMembers": [
+      {
+        "role": "@remix-expert",
+        "storyPointsCompleted": 10,
+        "tasksCompleted": 3,
+        "codeReviewsGiven": 5,
+        "pairProgrammingSessions": 2,
+        "impedimentsResolved": 1,
+        "specialization": "Frontend & Remix"
+      },
+      {
+        "role": "@mongodb-expert",
+        "storyPointsCompleted": 8,
+        "tasksCompleted": 2,
+        "codeReviewsGiven": 4,
+        "pairProgrammingSessions": 2,
+        "impedimentsResolved": 1,
+        "specialization": "Database & Backend"
+      },
+      {
+        "role": "@shopify-api-expert",
+        "storyPointsCompleted": 8,
+        "tasksCompleted": 2,
+        "codeReviewsGiven": 4,
+        "pairProgrammingSessions": 1,
+        "impedimentsResolved": 0,
+        "specialization": "Shopify Integration"
+      },
+      {
+        "role": "@ux-design-expert",
+        "storyPointsCompleted": 5,
+        "tasksCompleted": 1,
+        "codeReviewsGiven": 2,
+        "pairProgrammingSessions": 0,
+        "impedimentsResolved": 0,
+        "specialization": "UX & Design"
+      }
+    ]
+  },
+  "bottleneckAnalysis": {
+    "identifiedBottlenecks": [
+      {
+        "area": "Code review turnaround",
+        "averageDelay": 4,
+        "impact": "low",
+        "recommendation": "Increase review capacity or pair programming"
+      }
+    ],
+    "flowEfficiency": 72,
+    "waitTimeAnalysis": {
+      "codeReviewWait": 4,
+      "qaWait": 2,
+      "deploymentWait": 1,
+      "otherWait": 1
+    }
+  },
+  "trends": {
+    "velocityTrend": "stable",
+    "qualityTrend": "improving",
+    "collaborationTrend": "stable",
+    "efficiencyTrend": "stable"
+  },
+  "recommendations": [
+    "Maintain current team structure and practices",
+    "Continue focus on code quality and reviews",
+    "Consider reducing code review wait time",
+    "Keep technical debt ratio below 20%",
+    "Celebrate team achievements and high collaboration"
+  ],
+  "metadata": {
+    "generatedDate": "2024-02-05T17:00:00Z",
+    "generatedBy": "scrum-metrics-analyzer",
+    "dataQuality": "complete",
+    "confidenceLevel": "high",
+    "nextUpdateDue": "2024-02-19"
+  }
+}

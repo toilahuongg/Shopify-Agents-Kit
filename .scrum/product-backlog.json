@@ -1,0 +1,156 @@
+{
+  "metadata": {
+    "lastUpdated": "2024-01-15T10:00:00Z",
+    "productGoal": "Enable merchants to efficiently manage their product catalogs at scale",
+    "totalItems": 5,
+    "readyItems": 2,
+    "estimatedItems": 4
+  },
+  "backlog": [
+    {
+      "id": "PBI-001",
+      "type": "epic",
+      "title": "Bulk Product Operations",
+      "description": "Enable merchants to perform operations on multiple products simultaneously to save time and improve efficiency",
+      "priority": 1,
+      "status": "backlog",
+      "storyPoints": null,
+      "businessValue": 10,
+      "createdDate": "2024-01-10",
+      "updatedDate": "2024-01-15",
+      "sprint": null,
+      "dependencies": [],
+      "labels": ["feature", "high-priority", "merchant-experience"],
+      "productOwnerNotes": "Critical for Q1 launch - top merchant request",
+      "definitionOfReady": false,
+      "children": ["PBI-002", "PBI-003"]
+    },
+    {
+      "id": "PBI-002",
+      "type": "story",
+      "title": "Bulk product tagging",
+      "description": "As a merchant, I want to apply tags to multiple products at once, so that I can organize my catalog efficiently without manual tagging",
+      "priority": 2,
+      "status": "ready",
+      "storyPoints": 5,
+      "businessValue": 8,
+      "createdDate": "2024-01-12",
+      "updatedDate": "2024-01-15",
+      "sprint": null,
+      "acceptanceCriteria": [
+        "Given I have selected 50 products, when I apply a tag, then all 50 products are tagged within 5 seconds",
+        "Given a tag is applied, when I view the products, then the tag is visible on all selected products",
+        "Given I apply a tag to 100+ products, when the operation completes, then I receive a success confirmation with the count",
+        "Given an error occurs during tagging, when the operation fails, then I see a clear error message and can retry"
+      ],
+      "dependencies": [],
+      "labels": ["feature", "high-priority"],
+      "productOwnerNotes": "First story to implement from bulk operations epic",
+      "definitionOfReady": true,
+      "parent": "PBI-001"
+    },
+    {
+      "id": "PBI-003",
+      "type": "story",
+      "title": "Bulk price updates",
+      "description": "As a merchant, I want to update prices for multiple products simultaneously, so that I can quickly adjust pricing during sales or promotions",
+      "priority": 3,
+      "status": "ready",
+      "storyPoints": 8,
+      "businessValue": 9,
+      "createdDate": "2024-01-12",
+      "updatedDate": "2024-01-15",
+      "sprint": null,
+      "acceptanceCriteria": [
+        "Given I have selected products, when I apply a percentage discount, then all prices are updated correctly",
+        "Given I apply a fixed amount change, when the update completes, then all prices reflect the change",
+        "Given I update prices, when the operation completes, then I see a preview before confirming",
+        "Given invalid price data, when I attempt to update, then I receive validation errors"
+      ],
+      "dependencies": [],
+      "labels": ["feature", "high-priority"],
+      "productOwnerNotes": "Second priority from bulk operations epic",
+      "definitionOfReady": true,
+      "parent": "PBI-001"
+    },
+    {
+      "id": "PBI-004",
+      "type": "bug",
+      "title": "Product sync fails for large inventories",
+      "description": "When merchants have >1000 products, the initial sync operation times out and fails to complete",
+      "priority": 4,
+      "status": "backlog",
+      "storyPoints": 3,
+      "businessValue": 7,
+      "createdDate": "2024-01-14",
+      "updatedDate": "2024-01-15",
+      "sprint": null,
+      "acceptanceCriteria": [
+        "Given a merchant has 1000+ products, when initial sync runs, then it completes successfully",
+        "Given sync is in progress, when it's taking >30 seconds, then I see a progress indicator",
+        "Given sync encounters rate limits, when it backs off, then it retries with exponential backoff"
+      ],
+      "dependencies": [],
+      "labels": ["bug", "medium-priority", "performance"],
+      "productOwnerNotes": "Affecting 15% of merchants with large catalogs",
+      "definitionOfReady": true,
+      "parent": null
+    },
+    {
+      "id": "PBI-005",
+      "type": "spike",
+      "title": "Research GraphQL batch operations for Shopify API",
+      "description": "Investigate optimal patterns for batch operations using Shopify Admin GraphQL API to improve bulk operation performance",
+      "priority": 5,
+      "status": "backlog",
+      "storyPoints": null,
+      "businessValue": 5,
+      "createdDate": "2024-01-15",
+      "updatedDate": "2024-01-15",
+      "sprint": null,
+      "acceptanceCriteria": [
+        "Research completed with documented findings",
+        "Performance comparison of batch vs individual operations",
+        "Recommendation for implementation approach",
+        "Code examples or proof of concept"
+      ],
+      "dependencies": [],
+      "labels": ["spike", "research", "technical"],
+      "productOwnerNotes": "Time-boxed to 4 hours, needed before implementing bulk operations at scale",
+      "definitionOfReady": false,
+      "parent": null
+    }
+  ],
+  "schema": {
+    "type": {
+      "values": ["epic", "story", "bug", "spike", "technical-debt"],
+      "description": "Type of backlog item"
+    },
+    "status": {
+      "values": ["backlog", "ready", "in-progress", "done", "removed"],
+      "description": "Current status of the item"
+    },
+    "priority": {
+      "description": "Lower number = higher priority (1 is highest)"
+    },
+    "storyPoints": {
+      "values": [1, 2, 3, 5, 8, 13, 21, 40, 100],
+      "description": "Fibonacci sequence for estimation"
+    },
+    "businessValue": {
+      "range": "1-10",
+      "description": "Business value rating (10 is highest)"
+    },
+    "definitionOfReady": {
+      "criteria": [
+        "Clear description",
+        "Acceptance criteria defined",
+        "Estimated (for stories)",
+        "Dependencies identified",
+        "Small enough for one Sprint",
+        "Testable",
+        "Value/benefit clear"
+      ]
+    }
+  }
+}

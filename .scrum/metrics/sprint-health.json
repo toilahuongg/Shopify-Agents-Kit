@@ -1,0 +1,103 @@
+{
+  "projectName": "Shopify App Development",
+  "sprintHealthHistory": [
+    {
+      "sprintId": "sprint-001",
+      "sprintNumber": 1,
+      "overallHealthScore": 85,
+      "healthStatus": "healthy",
+      "indicators": {
+        "scopeStability": {
+          "score": 90,
+          "status": "healthy",
+          "description": "Minimal scope changes (balanced add/remove)",
+          "details": {
+            "addedItems": 1,
+            "removedItems": 1,
+            "netChange": 0,
+            "changeRate": 0
+          }
+        },
+        "velocityConsistency": {
+          "score": 80,
+          "status": "healthy",
+          "description": "Achieved 91% of committed work",
+          "details": {
+            "committed": 34,
+            "completed": 31,
+            "completionRate": 91.18
+          }
+        },
+        "burndownTrend": {
+          "score": 85,
+          "status": "healthy",
+          "description": "Generally followed ideal burndown",
+          "details": {
+            "daysOnTrack": 10,
+            "daysAtRisk": 3,
+            "daysCritical": 0,
+            "recoveryDays": 1
+          }
+        },
+        "impedimentManagement": {
+          "score": 95,
+          "status": "healthy",
+          "description": "All impediments resolved quickly",
+          "details": {
+            "totalImpediments": 2,
+            "resolvedImpediments": 2,
+            "openImpediments": 0,
+            "averageResolutionTime": 1.5
+          }
+        },
+        "teamCollaboration": {
+          "score": 90,
+          "status": "healthy",
+          "description": "Strong team coordination",
+          "details": {
+            "dailyStandupAttendance": 100,
+            "pairProgrammingSessions": 5,
+            "knowledgeSharing": "high"
+          }
+        }
+      },
+      "riskFactors": [
+        {
+          "type": "velocity",
+          "severity": "low",
+          "description": "3 story points carried over",
+          "impact": "Manageable carryover, items were deprioritized",
+          "mitigation": "Refine estimation for similar stories"
+        }
+      ],
+      "achievements": [
+        "Sprint goal achieved",
+        "High code quality maintained",
+        "All impediments resolved",
+        "Good team velocity established"
+      ],
+      "recommendations": [
+        "Maintain current sprint planning practices",
+        "Continue proactive impediment management",
+        "Consider slight increase in commitment for next sprint"
+      ],
+      "metadata": {
+        "calculatedDate": "2024-02-05T17:00:00Z",
+        "calculatedBy": "scrum-metrics-analyzer",
+        "dataCompleteness": 100,
+        "confidenceLevel": "high"
+      }
+    }
+  ],
+  "trends": {
+    "overallHealthTrend": "stable",
+    "improvingAreas": [
+      "impediment-management",
+      "team-collaboration"
+    ],
+    "watchAreas": [
+      "velocity-consistency"
+    ],
+    "concernAreas": []
+  }
+}

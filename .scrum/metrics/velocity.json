@@ -1,0 +1,52 @@
+{
+  "projectName": "Shopify App Development",
+  "teamName": "Core Development Team",
+  "velocityHistory": [
+    {
+      "sprintId": "sprint-001",
+      "sprintNumber": 1,
+      "startDate": "2024-01-22",
+      "endDate": "2024-02-05",
+      "committedStoryPoints": 34,
+      "completedStoryPoints": 31,
+      "velocity": 31,
+      "commitmentAccuracy": 91.18,
+      "carryOverPoints": 3,
+      "addedMidSprint": 3,
+      "removedMidSprint": 3,
+      "netScopeChange": 0,
+      "teamCapacity": 35,
+      "capacityUtilization": 88.57
+    }
+  ],
+  "statistics": {
+    "totalSprints": 1,
+    "averageVelocity": 31,
+    "minVelocity": 31,
+    "maxVelocity": 31,
+    "standardDeviation": 0,
+    "velocityTrend": "stable",
+    "averageCommitmentAccuracy": 91.18,
+    "predictabilityScore": 85
+  },
+  "forecasts": {
+    "nextSprint": {
+      "recommendedCommitment": 31,
+      "confidenceRange": {
+        "low": 28,
+        "high": 34
+      },
+      "confidence": "medium"
+    },
+    "threeSprintAverage": {
+      "estimatedVelocity": 31,
+      "confidence": "low"
+    }
+  },
+  "metadata": {
+    "lastUpdated": "2024-02-05T17:00:00Z",
+    "updatedBy": "sprint-manager",
+    "dataQuality": "complete",
+    "notes": "First sprint baseline established"
+  }
+}

@@ -1,0 +1,56 @@
+{
+  "sprintId": "sprint-001",
+  "sprintNumber": 1,
+  "sprintGoal": "Enable basic product tagging functionality for merchants",
+  "startDate": "2024-01-22",
+  "endDate": "2024-02-05",
+  "durationDays": 14,
+  "status": "planning",
+  "committedStoryPoints": 0,
+  "completedStoryPoints": 0,
+  "velocity": null,
+  "teamCapacity": {
+    "totalDays": 56,
+    "availableDays": 50,
+    "plannedVelocity": 35,
+    "teamMembers": 4,
+    "notes": "Account for 2 days of meetings and 4 days for holiday"
+  },
+  "backlogItems": [],
+  "dailyBurndown": [],
+  "impediments": [],
+  "metadata": {
+    "createdDate": "2024-01-22T09:00:00Z",
+    "updatedDate": "2024-01-22T09:00:00Z",
+    "createdBy": "product-owner",
+    "retrospectiveCompleted": false,
+    "reviewCompleted": false
+  },
+  "schema": {
+    "status": {
+      "values": ["planning", "active", "review", "retrospective", "completed"],
+      "description": "Sprint lifecycle status"
+    },
+    "backlogItems": {
+      "description": "Array of Product Backlog Item IDs committed to this Sprint",
+      "example": ["PBI-002", "PBI-003"]
+    },
+    "dailyBurndown": {
+      "description": "Daily remaining work tracking",
+      "format": [
+        {
+          "day": 0,
+          "date": "2024-01-22",
+          "remaining": 34,
+          "completed": 0,
+          "added": 0,
+          "removed": 0
+        }
+      ]
+    },
+    "impediments": {
+      "description": "Array of impediment IDs encountered during Sprint",
+      "example": ["IMP-001", "IMP-002"]
+    }
+  }
+}

@@ -1,0 +1,220 @@
+{
+  "projectName": "Shopify App Development",
+  "teamName": "Core Development Team",
+  "analysisDate": "2024-02-05T17:00:00Z",
+  "dataBaseline": {
+    "sprintsAnalyzed": 1,
+    "totalStoryPoints": 31,
+    "averageVelocity": 31,
+    "velocityStandardDeviation": 0,
+    "dataMaturity": "low",
+    "confidence": "medium",
+    "note": "Predictions will improve with more sprint data (recommend 3+ sprints)"
+  },
+  "velocityForecasting": {
+    "nextSprint": {
+      "sprintNumber": 2,
+      "forecast": {
+        "conservative": 28,
+        "realistic": 31,
+        "optimistic": 34
+      },
+      "recommendedCommitment": 31,
+      "confidenceInterval": {
+        "lower": 28,
+        "upper": 34,
+        "confidence": 70
+      },
+      "rationale": "Based on Sprint 1 performance with ±10% variance buffer",
+      "riskFactors": [
+        "Limited historical data (only 1 sprint)",
+        "Team velocity not yet stabilized",
+        "Seasonal factors unknown"
+      ]
+    },
+    "threeSprintForecast": {
+      "sprints": [2, 3, 4],
+      "estimatedTotalPoints": 93,
+      "averagePerSprint": 31,
+      "confidenceRange": {
+        "low": 84,
+        "high": 102
+      },
+      "confidence": 60
+    },
+    "longTermTrend": {
+      "direction": "stable",
+      "expectedStabilizationSprint": 3,
+      "matureVelocityEstimate": 32,
+      "factors": [
+        "Team learning curve",
+        "Process refinement",
+        "Domain knowledge growth"
+      ]
+    }
+  },
+  "releaseForecasting": {
+    "upcomingRelease": {
+      "releaseId": "v1.0",
+      "remainingStoryPoints": 150,
+      "estimatedSprints": 5,
+      "probabilityDistribution": {
+        "4sprints": 10,
+        "5sprints": 60,
+        "6sprints": 25,
+        "7sprints": 5
+      },
+      "estimatedCompletionDate": {
+        "50percentile": "2024-04-15",
+        "70percentile": "2024-04-29",
+        "90percentile": "2024-05-13"
+      },
+      "confidence": "medium",
+      "assumptions": [
+        "Team velocity remains around 30-32 points",
+        "No major scope changes",
+        "Team capacity remains stable",
+        "No extended holidays or disruptions"
+      ]
+    },
+    "scenarios": {
+      "bestCase": {
+        "averageVelocity": 34,
+        "sprintsNeeded": 5,
+        "completionDate": "2024-04-08"
+      },
+      "expectedCase": {
+        "averageVelocity": 31,
+        "sprintsNeeded": 5,
+        "completionDate": "2024-04-15"
+      },
+      "worstCase": {
+        "averageVelocity": 28,
+        "sprintsNeeded": 6,
+        "completionDate": "2024-04-29"
+      }
+    }
+  },
+  "sprintCompletionProbability": {
+    "nextSprintAnalysis": {
+      "sprintNumber": 2,
+      "plannedCommitment": 31,
+      "completionProbabilities": {
+        "25points": 95,
+        "28points": 85,
+        "31points": 70,
+        "34points": 50,
+        "37points": 30
+      },
+      "recommendations": [
+        "Commit to 31 points for 70% completion probability",
+        "Consider 28 points for safer 85% probability",
+        "Have contingency plan if committing above 31 points"
+      ]
+    }
+  },
+  "capacityBasedPlanning": {
+    "nextSprint": {
+      "teamCapacity": 35,
+      "recommendedCommitment": 31,
+      "capacityUtilization": 88.57,
+      "buffer": 4,
+      "rationale": "Leave 11% buffer for unexpected work and technical debt",
+      "adjustments": [
+        {
+          "factor": "Holiday on Day 10",
+          "impact": -4,
+          "mitigation": "Already accounted in capacity calculation"
+        }
+      ]
+    },
+    "capacityTrends": {
+      "averageUtilization": 88.57,
+      "optimalRange": "80-90%",
+      "status": "optimal",
+      "recommendation": "Maintain current planning approach"
+    }
+  },
+  "riskAnalysis": {
+    "identifiedRisks": [
+      {
+        "risk": "Limited historical data",
+        "probability": "high",
+        "impact": "medium",
+        "mitigation": "Apply conservative estimates, collect more data over next 2-3 sprints",
+        "timeline": "Will improve by Sprint 4"
+      },
+      {
+        "risk": "Velocity not stabilized",
+        "probability": "medium",
+        "impact": "medium",
+        "mitigation": "Monitor velocity closely, adjust forecasts after each sprint",
+        "timeline": "Expected stabilization by Sprint 3-4"
+      },
+      {
+        "risk": "Unknown seasonal patterns",
+        "probability": "low",
+        "impact": "medium",
+        "mitigation": "Track team availability, plan for known holidays",
+        "timeline": "Better understanding after 1 quarter (3-4 months)"
+      }
+    ],
+    "overallRiskLevel": "medium",
+    "confidenceLevel": "medium"
+  },
+  "statisticalMethods": {
+    "velocityForecasting": {
+      "method": "Historical average with standard deviation",
+      "formula": "mean ± (z-score × stdDev)",
+      "dataPoints": 1,
+      "minimumRecommended": 3
+    },
+    "releaseForecasting": {
+      "method": "Monte Carlo simulation (simplified)",
+      "iterations": 10000,
+      "samplingMethod": "Normal distribution",
+      "note": "Full Monte Carlo will be more accurate with 3+ sprints of data"
+    },
+    "probabilityCalculations": {
+      "method": "Cumulative distribution function",
+      "basedOn": "Historical velocity distribution",
+      "adjustments": "Team capacity and historical completion rates"
+    }
+  },
+  "improvementOpportunities": {
+    "dataCollection": [
+      "Continue tracking daily progress for accurate burndown",
+      "Document scope changes immediately",
+      "Track impediment resolution times",
+      "Collect quality metrics (defects, tech debt)"
+    ],
+    "forecasting": [
+      "Predictions will improve significantly after Sprint 3",
+      "Consider external factors (holidays, team changes)",
+      "Regular forecast updates after each sprint",
+      "Review and adjust assumptions quarterly"
+    ],
+    "planning": [
+      "Use forecast data for sprint planning",
+      "Share probability data with stakeholders",
+      "Set realistic expectations based on forecasts",
+      "Plan releases with buffer for uncertainty"
+    ]
+  },
+  "actionableInsights": [
+    "For Sprint 2: Commit to 31 points (70% completion probability)",
+    "For Release v1.0: Plan for 5-6 sprints with target date April 15-29",
+    "Continue current sprint practices to build better baseline data",
+    "Re-run forecasts after Sprint 3 for improved accuracy",
+    "Communicate forecast uncertainty to stakeholders"
+  ],
+  "metadata": {
+    "generatedDate": "2024-02-05T17:00:00Z",
+    "generatedBy": "scrum-metrics-analyzer",
+    "dataQuality": "baseline-established",
+    "confidenceLevel": "medium",
+    "nextUpdateDue": "2024-02-19",
+    "recommendedUpdateFrequency": "After each sprint",
+    "notes": "Forecasts based on 1 sprint. Accuracy will improve with more data."
+  }
+}

@@ -1,0 +1,118 @@
+{
+  "projectName": "Shopify App Development",
+  "chartType": "burndown",
+  "sprints": [
+    {
+      "sprintId": "sprint-001",
+      "sprintNumber": 1,
+      "sprintGoal": "Enable basic product tagging functionality for merchants",
+      "startDate": "2024-01-22",
+      "endDate": "2024-02-05",
+      "committedPoints": 34,
+      "chartData": {
+        "labels": [
+          "Day 0", "Day 1", "Day 2", "Day 3", "Day 4", "Day 5", "Day 6", "Day 7",
+          "Day 8", "Day 9", "Day 10", "Day 11", "Day 12", "Day 13", "Day 14"
+        ],
+        "dates": [
+          "2024-01-22", "2024-01-23", "2024-01-24", "2024-01-25", "2024-01-26",
+          "2024-01-27", "2024-01-28", "2024-01-29", "2024-01-30", "2024-01-31",
+          "2024-02-01", "2024-02-02", "2024-02-03", "2024-02-04", "2024-02-05"
+        ],
+        "idealBurndown": [34, 31.6, 29.3, 26.9, 24.5, 22.1, 19.7, 17.4, 15, 12.6, 10.3, 7.9, 5.5, 3.1, 0],
+        "actualBurndown": [34, 32, 29, 26, 23, 20, 18, 22, 19, 16, 12, 8, 5, 3, 3],
+        "completed": [0, 2, 5, 8, 11, 14, 16, 12, 15, 18, 22, 26, 29, 31, 31],
+        "scopeChanges": [
+          {
+            "day": 7,
+            "type": "added",
+            "points": 3,
+            "reason": "Critical bug fix"
+          },
+          {
+            "day": 7,
+            "type": "removed",
+            "points": 3,
+            "reason": "Deferred analytics feature"
+          }
+        ]
+      },
+      "analysis": {
+        "completionRate": 91.18,
+        "daysOnTrack": 10,
+        "daysAtRisk": 3,
+        "daysCritical": 0,
+        "recoveryAbility": "good",
+        "finalVariance": 3,
+        "averageDailyProgress": 2.21,
+        "expectedDailyProgress": 2.43,
+        "progressConsistency": 75
+      },
+      "insights": [
+        "Team started strong with good progress Days 1-6",
+        "Day 7 scope change caused temporary setback",
+        "Team recovered well in Days 10-14",
+        "Final result: 31/34 points completed (91%)",
+        "3 points carried over were lower priority items"
+      ],
+      "metadata": {
+        "generatedDate": "2024-02-05T17:00:00Z",
+        "generatedBy": "scrum-metrics-analyzer",
+        "chartFormat": "JSON",
+        "visualizationReady": true
+      }
+    }
+  ],
+  "chartConfigurations": {
+    "burndown": {
+      "type": "line",
+      "title": "Sprint Burndown Chart",
+      "xAxis": "Sprint Days",
+      "yAxis": "Story Points Remaining",
+      "datasets": [
+        {
+          "label": "Ideal Burndown",
+          "color": "#94A3B8",
+          "style": "dashed",
+          "showPoints": false
+        },
+        {
+          "label": "Actual Burndown",
+          "color": "#3B82F6",
+          "style": "solid",
+          "showPoints": true
+        }
+      ]
+    },
+    "burnup": {
+      "type": "line",
+      "title": "Sprint Burnup Chart",
+      "xAxis": "Sprint Days",
+      "yAxis": "Story Points Completed",
+      "datasets": [
+        {
+          "label": "Total Scope",
+          "color": "#94A3B8",
+          "style": "dashed",
+          "showPoints": false
+        },
+        {
+          "label": "Completed Work",
+          "color": "#10B981",
+          "style": "solid",
+          "showPoints": true
+        }
+      ]
+    }
+  },
+  "visualizationNotes": {
+    "tools": ["Chart.js", "D3.js", "Recharts", "Victory"],
+    "exportFormats": ["PNG", "SVG", "PDF", "JSON"],
+    "interactiveFeatures": [
+      "Hover tooltips showing daily details",
+      "Clickable scope change markers",
+      "Zoom and pan functionality",
+      "Toggle ideal/actual lines"
+    ]
+  }
+}

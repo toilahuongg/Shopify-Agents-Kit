@@ -1,0 +1,212 @@
+{
+  "team": {
+    "name": "Development Team",
+    "sprintDuration": 14,
+    "sprintDurationUnit": "days",
+    "workingHoursPerDay": 6,
+    "focusFactor": 0.7,
+    "averageVelocity": null,
+    "velocityHistory": []
+  },
+  "members": [
+    {
+      "id": "member-001",
+      "name": "remix-expert",
+      "role": "Full-stack Developer",
+      "skills": ["Remix", "React", "TypeScript", "Node.js", "API Design"],
+      "capacity": {
+        "hoursPerDay": 6,
+        "daysPerSprint": 10,
+        "totalHours": 60,
+        "notes": "Primary frontend and Remix framework expert"
+      },
+      "availability": {
+        "currentSprint": {
+          "availableDays": 10,
+          "unavailableDates": [],
+          "partialDays": []
+        }
+      }
+    },
+    {
+      "id": "member-002",
+      "name": "mongodb-expert",
+      "role": "Backend Developer / Database Specialist",
+      "skills": ["MongoDB", "Database Design", "Aggregation Pipelines", "Indexing", "Performance Optimization"],
+      "capacity": {
+        "hoursPerDay": 6,
+        "daysPerSprint": 10,
+        "totalHours": 60,
+        "notes": "Primary database and backend performance expert"
+      },
+      "availability": {
+        "currentSprint": {
+          "availableDays": 10,
+          "unavailableDates": [],
+          "partialDays": []
+        }
+      }
+    },
+    {
+      "id": "member-003",
+      "name": "shopify-api-expert",
+      "role": "Integration Specialist",
+      "skills": ["Shopify Admin API", "GraphQL", "REST", "OAuth", "Webhooks", "Rate Limiting"],
+      "capacity": {
+        "hoursPerDay": 6,
+        "daysPerSprint": 10,
+        "totalHours": 60,
+        "notes": "Primary Shopify integration and API expert"
+      },
+      "availability": {
+        "currentSprint": {
+          "availableDays": 10,
+          "unavailableDates": [],
+          "partialDays": []
+        }
+      }
+    },
+    {
+      "id": "member-004",
+      "name": "shopify-polaris-expert",
+      "role": "UI/UX Developer",
+      "skills": ["Polaris Design System", "React Components", "Accessibility", "UI/UX Patterns"],
+      "capacity": {
+        "hoursPerDay": 6,
+        "daysPerSprint": 10,
+        "totalHours": 60,
+        "notes": "Primary UI/UX and Polaris component expert"
+      },
+      "availability": {
+        "currentSprint": {
+          "availableDays": 10,
+          "unavailableDates": [],
+          "partialDays": []
+        }
+      }
+    }
+  ],
+  "currentSprint": {
+    "sprintId": "sprint-001",
+    "sprintNumber": 1,
+    "startDate": "2024-01-22",
+    "endDate": "2024-02-05",
+    "workingDays": 10,
+    "totalTeamDays": 40,
+    "availableTeamDays": 40,
+    "teamCapacityHours": 240,
+    "plannedVelocity": 35,
+    "notes": "First sprint - using estimated velocity of 35 points"
+  },
+  "capacityCalculation": {
+    "formula": "Team Capacity = Team Members × Available Days × Hours Per Day × Focus Factor",
+    "example": "4 members × 10 days × 6 hours × 0.7 = 168 hours",
+    "storyPointConversion": "Assume average story = 6 hours, then capacity ≈ 28 story points",
+    "focusFactorExplanation": "Focus Factor (0.6-0.8) accounts for meetings, emails, interruptions, etc. 0.7 means 70% of time is Sprint work.",
+    "adjustments": [
+      "Subtract days for holidays, PTO, company events",
+      "Reduce capacity for new team members (ramp-up time)",
+      "Increase capacity slightly as team matures (improved collaboration)",
+      "Account for part-time members or shared resources"
+    ]
+  },
+  "velocityTracking": {
+    "description": "Historical velocity data for forecasting",
+    "sprints": [],
+    "notes": "Velocity is only calculated after Sprint completion, from sum of completed story points"
+  },
+  "upcomingSprints": {
+    "sprint-002": {
+      "sprintId": "sprint-002",
+      "sprintNumber": 2,
+      "startDate": "2024-02-06",
+      "endDate": "2024-02-20",
+      "holidays": [],
+      "teamChanges": [],
+      "estimatedCapacity": 40,
+      "notes": "No known holidays or team changes"
+    }
+  },
+  "metadata": {
+    "lastUpdated": "2024-01-22T09:00:00Z",
+    "updatedBy": "scrum-master",
+    "version": "1.0"
+  },
+  "schema": {
+    "focusFactor": {
+      "range": "0.6 - 0.8",
+      "description": "Percentage of time team spends on Sprint work vs meetings/admin",
+      "typical": {
+        "0.6": "New team, lots of meetings",
+        "0.7": "Mature team, standard meetings",
+        "0.8": "Highly efficient team, minimal interruptions"
+      }
+    },
+    "availability": {
+      "unavailableDates": {
+        "description": "Array of ISO dates when member is completely unavailable",
+        "example": ["2024-01-26", "2024-01-29"]
+      },
+      "partialDays": {
+        "description": "Days with reduced availability",
+        "example": [
+          {"date": "2024-01-25", "hours": 3, "reason": "Doctor appointment"}
+        ]
+      }
+    },
+    "velocityHistory": {
+      "description": "Array of historical Sprint velocities",
+      "format": [
+        {
+          "sprintId": "sprint-001",
+          "sprintNumber": 1,
+          "committedPoints": 34,
+          "completedPoints": 31,
+          "velocity": 31,
+          "completionRate": 0.91
+        }
+      ]
+    }
+  },
+  "exampleScenarios": {
+    "scenario1_holiday": {
+      "description": "Sprint with 1 holiday affecting all team members",
+      "calculation": {
+        "normalDays": 10,
+        "holidayDays": 1,
+        "availableDays": 9,
+        "teamCapacity": "4 members × 9 days × 6 hours × 0.7 = 151 hours",
+        "estimatedVelocity": "~25 story points (reduced from normal 28)"
+      }
+    },
+    "scenario2_pto": {
+      "description": "One team member on vacation for 5 days",
+      "calculation": {
+        "member1": "10 days × 6 hours × 0.7 = 42 hours",
+        "member2": "10 days × 6 hours × 0.7 = 42 hours",
+        "member3": "10 days × 6 hours × 0.7 = 42 hours",
+        "member4": "5 days × 6 hours × 0.7 = 21 hours (PTO last week)",
+        "totalCapacity": "147 hours",
+        "estimatedVelocity": "~25 story points"
+      }
+    },
+    "scenario3_new_member": {
+      "description": "New team member joining (50% capacity first Sprint)",
+      "calculation": {
+        "existingMembers": "3 × 10 days × 6 hours × 0.7 = 126 hours",
+        "newMember": "1 × 10 days × 6 hours × 0.5 = 30 hours (50% ramp-up)",
+        "totalCapacity": "156 hours",
+        "estimatedVelocity": "~26 story points"
+      }
+    }
+  },
+  "bestPractices": [
+    "Update capacity at Sprint Planning based on known absences",
+    "Track velocity over 3-6 Sprints for reliable forecasting",
+    "Don't compare velocity between teams (team-specific metric)",
+    "Adjust focus factor based on team maturity and interruptions",
+    "Account for meetings, ceremonies, and non-Sprint work",
+    "Review capacity calculation in Sprint Retrospective if consistently over/under",
+    "Use velocity for forecasting, not performance evaluation"
+  ]
+}
