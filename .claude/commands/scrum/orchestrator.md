@@ -60,7 +60,7 @@ Based on the analysis, classify the current state:
 **B. BACKLOG BUILDING** (Backlog exists but < 5 items or items not estimated)
 - Status: "📝 Building Product Backlog"
 - Next Actions:
-  1. Add more backlog items
+  1. Add more backlog items: `/scrum:add-backlog`
   2. Refine existing items: `/backlog-refinement`
   3. Estimate stories: `/story-estimation`
 
@@ -162,7 +162,7 @@ Ask the user using AskUserQuestion:
 - "Execute primary action ([action name])"
 - "Execute secondary action ([action name])"
 - "View detailed metrics"
-- "Add backlog items manually"
+- "Add backlog items (/scrum:add-backlog)"
 - "Other (specify)"
 
 ### Step 6: Execute Chosen Action
@@ -177,9 +177,9 @@ Based on user choice:
 - Use Task tool to launch appropriate agent
 - Pass necessary context
 
-**If manual action**:
-- Guide the user through the process
-- Update files as needed
+**If manual action (add backlog items)**:
+- Execute `/scrum:add-backlog` command
+- Guide through interactive backlog creation process
 
 **If view metrics**:
 - Display relevant metrics from `.scrum/metrics/` files
@@ -261,14 +261,22 @@ Would you like to see detailed metrics?
 
 Based on historical data and patterns:
 
+### Suggest Adding Backlog Items
+If backlog has < 8 items total or < 5 ready items
+- Command: `/scrum:add-backlog`
+- Reason: Need more items for effective sprint planning
+
 ### Suggest Backlog Refinement
 If > 2 weeks since last refinement and < 30% of backlog is "ready"
+- Command: `/backlog-refinement`
 
 ### Suggest Story Estimation
 If > 5 unestimated stories in backlog
+- Command: `/story-estimation`
 
 ### Suggest Sprint Planning
-If no active sprint and backlog has sufficient ready items
+If no active sprint and backlog has sufficient ready items (8+)
+- Command: `/sprint-planning`
 
 ### Suggest Daily Standup
 If > 1 business day since last standup during active sprint
@@ -346,7 +354,9 @@ Alert the user if they're not following Scrum best practices:
 
 The orchestrator coordinates with:
 - **All 7 agents**: Launches them as needed
-- **All 6 workflows**: Executes via SlashCommand
+- **All 9 workflows**: Executes via SlashCommand
+  - System: `/scrum:init`, `/scrum:orchestrator`, `/scrum:add-backlog`
+  - Ceremonies: `/sprint-planning`, `/daily-standup`, `/sprint-review`, `/sprint-retro`, `/backlog-refinement`, `/story-estimation`
 - **Metrics system**: Reads and interprets data
 - **Test suite**: Validates system health
 

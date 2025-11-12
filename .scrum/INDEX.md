@@ -5,9 +5,13 @@ Quick navigation to all documentation and resources.
 ## 🚀 Getting Started
 
 **New to Scrum?** Start here:
+- [QUICK_REFERENCE.md](QUICK_REFERENCE.md) - **One-page cheat sheet** 📄
+- [AUTOMATED_WORKFLOW_GUIDE.md](AUTOMATED_WORKFLOW_GUIDE.md) - **Fully automated workflow (YOLO mode)** 🚀
+- [SHOPIFY_APP_BRAINSTORM_GUIDE.md](SHOPIFY_APP_BRAINSTORM_GUIDE.md) - **Shopify app ideation & brainstorming** 💡
 - [USER_GUIDE.md](USER_GUIDE.md) - **Complete step-by-step guide from idea to first sprint** ⭐
 - [QUICK_START.md](QUICK_START.md) - 5-minute quick start guide
 - [README.md](README.md) - Complete system guide with reference
+- [WHATS_NEW.md](WHATS_NEW.md) - Latest updates & changes 🆕
 
 ## 📚 Core Documentation
 
@@ -61,6 +65,7 @@ Located in `../.claude/commands/scrum/`:
 ### System Commands
 - **init.md** - `/scrum:init` - Initialize new Scrum project with all artifacts
 - **orchestrator.md** - `/scrum:orchestrator` - Intelligent workflow guide and state analyzer
+- **add-backlog.md** - `/scrum:add-backlog` - Add new backlog items interactively with templates
 
 ### Scrum Ceremonies
 - **sprint-planning.md** - `/sprint-planning` - Plan and commit to sprint work
@@ -192,7 +197,7 @@ See: [README.md - For Development Team](README.md#for-development-team)
 
 ```
 ✅ 7 AI Agents (Operational)
-✅ 6 Workflows (Ready to use)
+✅ 9 Workflows (Ready to use)
 ✅ 6 Metrics Systems (Active)
 ✅ 13 Test Suites (100% passing)
 ✅ 10+ Documentation Files (Complete)

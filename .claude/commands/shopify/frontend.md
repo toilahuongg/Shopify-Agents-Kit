@@ -1,39 +1,92 @@
 ---
-description: Comprehensive workflow for Shopify app frontend development with Remix, Polaris, and App Bridge. This command plans, gets approval, creates todos, and implements code following a professional workflow.
+description: Shopify app frontend development integrated with Scrum workflow. Converts UI features to PBIs, tracks in Sprint with daily standups, and demos in Sprint Review.
 ---
 
-You are orchestrating a comprehensive Shopify app frontend development workflow. This command integrates multiple specialized agents to deliver production-ready Shopify applications built with Remix, Polaris UI, and App Bridge.
+You are orchestrating Shopify app frontend development **fully integrated with Scrum Agile methodology**. This command converts UI features into Product Backlog Items (PBIs), integrates with Sprint workflow, and follows all Scrum ceremonies.
+
+## 🔄 Scrum Integration Overview
+
+**How this integrates with Scrum:**
+
+- **Before Sprint Planning**: UI Feature → User Stories → PBIs with acceptance criteria & story points
+- **Sprint Planning**: PBIs selected based on velocity, added to Sprint Backlog
+- **Daily Standup**: Track UI component progress, update burndown, resolve blockers
+- **During Sprint**: Implement with task breakdown, mark progress daily
+- **Sprint Review**: Demo working UI to stakeholders (interactive demo)
+- **Sprint Retro**: Capture UX learnings, accessibility improvements, component patterns
 
 ## Workflow Overview
 
-This workflow follows a structured 5-phase approach:
+This workflow follows **Scrum-integrated phases**:
 
-1. **Planning Phase**: Analyze requirements and create detailed implementation plan
-2. **Approval Phase**: Present plan to user for review and approval
-3. **Task Management Phase**: Break down plan into actionable todos
-4. **Implementation Phase**: Execute todos systematically with specialized agents
-5. **Review Phase**: Comprehensive code review for quality, security, and best practices
+1. **Story Creation Phase**: Convert UI feature to User Stories with acceptance criteria
+2. **Backlog Integration Phase**: Create PBIs, estimate story points, add to Product Backlog
+3. **Sprint Planning Phase**: Select UI PBIs for Sprint based on capacity
+4. **Sprint Execution Phase**: Daily implementation with Standup tracking
+5. **Sprint Review Phase**: Interactive UI demo, collect UX feedback
+6. **Retrospective Phase**: Document UX learnings and component patterns
 
-## Phase 1: Planning & Analysis
+## Phase 1: Story Creation & Analysis
 
-When you receive a request, first analyze it to understand:
-- What Shopify app functionality is needed
-- Which components/features involve Remix (routing, loaders, actions)
-- Which components/features involve Polaris (UI components, design patterns)
-- Which components/features involve App Bridge (embedded app features, navigation, authentication)
-- Technical requirements and constraints
+### Step 1.1: Convert UI Feature to User Stories
 
-Then create a comprehensive implementation plan that includes:
-- Architecture overview (routes, data flow, component structure)
-- Technology stack specifics (Remix patterns, Polaris components, App Bridge features)
-- Implementation steps in logical order
-- Potential challenges and how to address them
-- Testing strategy
+Use the **product-owner** agent to convert the UI feature request into proper User Stories:
 
-Use the `Task` tool to launch specialized agents for research during planning:
-- `shopify-polaris-expert` for UI/design system questions
+```
+Convert this frontend feature request into User Stories:
+
+Feature: [description of UI feature user wants to build]
+
+For each User Story, provide:
+- Title: Brief, descriptive title
+- User Story Format: "As a [merchant/admin], I want [UI feature], so that [benefit]"
+- Acceptance Criteria: Given-When-Then format + UX criteria
+- Technical Notes: Frontend specifics (Remix routes, Polaris components, App Bridge)
+- Story Points Estimate: Use Fibonacci (1, 2, 3, 5, 8, 13)
+- Dependencies: Any dependencies on other stories or backend APIs
+- Priority: High/Medium/Low based on user value
+- UX Considerations: Accessibility, responsiveness, user experience
+
+Break down complex UI features into multiple smaller stories if needed.
+```
+
+### Step 1.2: Technical Analysis for Each UI Story
+
+For each User Story, analyze technical requirements:
+
+**Remix Framework:**
+- Routes needed (file structure, nesting)
+- Loader functions for data fetching
+- Action functions for form handling
+- Error boundaries for error handling
+
+**Polaris UI Components:**
+- Layout components (Page, Layout, Card)
+- Form components (TextField, Select, Checkbox, etc.)
+- Data display (DataTable, ResourceList, etc.)
+- Feedback components (Toast, Banner, Modal)
+- Navigation components (Tabs, Pagination, etc.)
+
+**App Bridge Integration:**
+- App initialization and config
+- Authentication flow
+- Navigation within embedded context
+- Resource pickers (Product, Collection, etc.)
+- Action triggers (Toast, Modal, Redirect)
+
+**UX & Accessibility:**
+- Responsive design requirements
+- Keyboard navigation support
+- Screen reader compatibility (ARIA labels)
+- Color contrast and visual accessibility
+- Loading states and error handling UX
+- Mobile experience
+
+Use the `Task` tool to launch specialized agents for technical research:
+- `shopify-polaris-expert` for UI/design system patterns
 - `shopify-app-bridge-expert` for embedded app features
 - `remix-expert` for framework-specific patterns
+- `ux-design-expert` for user experience and accessibility guidance
 
 **Planning Output Format**:
 ```markdown

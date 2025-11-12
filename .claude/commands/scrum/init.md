@@ -11,6 +11,26 @@ You are helping the user initialize a complete Scrum Agile system for their proj
 
 **Initialize the Scrum system by creating all required artifacts and gathering initial project information.**
 
+## YOLO MODE Detection
+
+**First, check if the user wants YOLO mode (auto-accept all defaults):**
+
+Ask the user:
+```
+Would you like to use YOLO mode? (Auto-accept all defaults for quick setup)
+- Yes - Use smart defaults, no prompts
+- No - Guide me through configuration
+```
+
+If **YOLO mode enabled**, use these defaults:
+- Project Name: Extract from git repository name or use "My Scrum Project"
+- Sprint Duration: 2 weeks (most common)
+- Team Size: 5 members (typical)
+- Start Date: Next Monday
+- Team Members: Generate 5 generic team members (Dev1-5, 6hrs/day each)
+
+**Skip all prompts** and proceed directly to Step 3 with these defaults.
+
 ### Step 1: Welcome and Overview
 
 Display a welcoming message:
@@ -35,14 +55,50 @@ This will create:
 Let's get started!
 ```
 
+If YOLO mode: Add "⚡ YOLO MODE: Using smart defaults for rapid setup!"
+
 ### Step 2: Gather Project Information
 
-Ask the user these questions (use the AskUserQuestion tool):
+**Only if NOT in YOLO mode**, ask the user these questions (use the AskUserQuestion tool):
 
 1. **Project Name**: "What is your project name?"
 2. **Sprint Duration**: "How many weeks per sprint?" (Options: 1 week, 2 weeks, 3 weeks, 4 weeks)
 3. **Team Size**: "How many team members?" (Options: 2-3, 4-5, 6-8, 9+)
 4. **Start Date**: "When would you like to start Sprint 1?" (Format: YYYY-MM-DD)
+
+**If YOLO mode**, automatically determine:
+```javascript
+// Get project name from git or directory
+const projectName = await getGitRepoName() || path.basename(process.cwd()) || "My Scrum Project";
+
+// Use smart defaults
+const config = {
+  projectName: projectName,
+  sprintDurationWeeks: 2,
+  sprintDurationDays: 10, // 2 weeks × 5 working days
+  teamSize: 5,
+  startDate: getNextMonday(), // Calculate next Monday
+  teamMembers: [
+    { id: "TM-001", name: "Developer 1", role: "Full-stack Developer", hoursPerDay: 6, daysAvailable: 10 },
+    { id: "TM-002", name: "Developer 2", role: "Frontend Developer", hoursPerDay: 6, daysAvailable: 10 },
+    { id: "TM-003", name: "Developer 3", role: "Backend Developer", hoursPerDay: 6, daysAvailable: 10 },
+    { id: "TM-004", name: "Designer", role: "UX/UI Designer", hoursPerDay: 6, daysAvailable: 10 },
+    { id: "TM-005", name: "QA Engineer", role: "Quality Assurance", hoursPerDay: 6, daysAvailable: 10 }
+  ]
+};
+```
+
+Display the auto-selected configuration:
+```
+⚡ YOLO MODE - Auto-configured:
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  Project Name:        [Detected name]
+  Sprint Duration:     2 weeks (10 working days)
+  Team Members:        5 developers (generic profiles)
+  Sprint 1 Start:      [Next Monday date]
+  Total Capacity:      300 hours (5 × 6 hrs × 10 days)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+```
 
 ### Step 3: Create Directory Structure
 
@@ -90,9 +146,11 @@ Create an empty product backlog structure:
 
 ### Step 5: Initialize Team Capacity
 
-Ask about team members (use AskUserQuestion):
+**If NOT in YOLO mode**, ask about team members (use AskUserQuestion):
 - "Please provide team member names (comma-separated)"
 - For each member, gather: name, role, hours per day, days available per sprint
+
+**If in YOLO mode**, use the 5 generic team members from Step 2.
 
 Create `team-capacity.json`:
 
@@ -213,6 +271,11 @@ bash .scrum/tests/run-all-tests.sh
 ### Step 12: Display Success Summary
 
 Show a completion summary:
+
+**If YOLO mode**, add at the top:
+```
+⚡ YOLO MODE COMPLETE - System ready in seconds!
+```
 
 ```
 ╔════════════════════════════════════════════════════════════════════╗
