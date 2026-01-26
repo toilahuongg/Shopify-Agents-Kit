@@ -1,26 +1,25 @@
 {
-  "name": "agents-kit",
-  "version": "1.0.0",
-  "description": "A curated collection of specialized Claude Code agents for enhanced development workflows. This kit provides expert-level assistance across multiple domains including Shopify development, web frameworks, database management, and project organization.",
-  "homepage": "https://github.com/toilahuongg/Shopify-Agents-Kit#readme",
-  "bugs": {
-    "url": "https://github.com/toilahuongg/Shopify-Agents-Kit/issues"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/toilahuongg/Shopify-Agents-Kit.git"
-  },
-  "license": "ISC",
-  "author": "",
-  "type": "commonjs",
+  "name": "shopify-cc-kit",
+  "version": "1.0.4",
+  "description": "A powerful collection of Agentic Skills, Workflows, and Agents designed to supercharge your AI coding assistant.",
   "main": "index.js",
+  "bin": {
+    "update": "./bin/sync.js"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "bin": {
-    "shopify-agents-kit": "./index.js"
-  },
+  "keywords": [
+    "ai",
+    "agents",
+    "skills",
+    "workflows",
+    "coding-assistant"
+  ],
+  "author": "Miso Apps",
+  "license": "ISC",
   "dependencies": {
-    "fs-extra": "^11.3.2"
+    "commander": "^11.1.0",
+    "fs-extra": "^11.2.0"
   }
 }
