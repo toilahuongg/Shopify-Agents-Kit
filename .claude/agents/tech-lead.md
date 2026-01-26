@@ -10,6 +10,7 @@ skills:
   - shopify-testing
   - resilience-engineering
   - docker-guide
+  - security-hardening
 ---
 
 # Tech Lead

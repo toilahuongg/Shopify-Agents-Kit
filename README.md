@@ -53,7 +53,6 @@ A complete suite for professional Shopify App development:
 - **agent-creator**: Guide for creating and configuring new agents.
 - **skill-creator**: Guide for creating effective new skills.
 - **rule-creator**: Create and manage user rules.
-- **workflow-creator**: Create and manage automated workflows.
 
 **📚 Documentation & Research**
 - **docusaurus-generator**: Generate documentation sites using Docusaurus.

@@ -15,6 +15,9 @@ skills:
   - shopify-app-bridge
   - typescript
   - remixjs-best-practices
+  - zustand-state
+  - form-validation
+  - security-hardening
 ---
 
 # Shopify Developer
