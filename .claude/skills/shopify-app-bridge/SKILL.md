@@ -170,3 +170,8 @@ shopify.saveBar.addEventListener('discard', () => {
 
 > [!WARNING]
 > **Host Parameter**: The `host` parameter is CRITICAL for App Bridge to work. It must be present in the URL or passed to the config. It is a base64 encoded string provided by Shopify.
+
+## References
+
+- [Modal Max](./references/modal-max.md) - Full-screen modal dialogs for complex multi-step flows, editors, and wizards
+- [Save Bar](./references/save-bar.md) - Contextual save bar for indicating unsaved form changes
