@@ -7,6 +7,25 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.1.2] - 2026-01-26
+
+### Changed
+- **bin/sync.js**: Complete rewrite with new features:
+  - Fixed directory from `.agent` to `.claude`
+  - Added `--force` flag for overwrite
+  - Added `--agents-only` and `--skills-only` options
+  - Added `--dry-run` mode
+  - Better output with agent/skill counts
+  - Quick start guide after sync
+
+## [1.1.1] - 2026-01-26
+
+### Added
+- **changelog**: New skill for generating changelogs following Keep a Changelog format
+
+### Changed
+- Updated README.md with improved documentation, tables, and installation instructions
+
 ## [1.1.0] - 2026-01-26
 
 ### Added
@@ -45,7 +64,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Shopify app development workflows
 - User guide documentation
 
-[Unreleased]: https://github.com/user/repo/compare/v1.1.0...HEAD
+[Unreleased]: https://github.com/user/repo/compare/v1.1.2...HEAD
+[1.1.2]: https://github.com/user/repo/compare/v1.1.1...v1.1.2
+[1.1.1]: https://github.com/user/repo/compare/v1.1.0...v1.1.1
 [1.1.0]: https://github.com/user/repo/compare/v1.0.4...v1.1.0
 [1.0.4]: https://github.com/user/repo/compare/v1.0.0...v1.0.4
 [1.0.0]: https://github.com/user/repo/releases/tag/v1.0.0
