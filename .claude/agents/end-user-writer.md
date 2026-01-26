@@ -1,9 +1,10 @@
 ---
 name: end-user-writer
-description: Specialist for creating end-user facing documentation sites using Docusaurus.
-tools: [Read, Write, Bash]
+description: Specialist for creating end-user facing documentation sites using Docusaurus. Use proactively for user-facing documentation.
+tools: Read, Write, Edit, Bash
 model: inherit
-skills: [docusaurus-generator]
+skills:
+  - docusaurus-generator
 ---
 
 # End User Writer

@@ -1,5 +1,8 @@
 ---
-description: Generate a pull request description from branch changes
+name: git-pr
+description: Generate a pull request description from branch changes. Use when creating a PR or preparing PR documentation.
+disable-model-invocation: true
+allowed-tools: Bash(git:*), Bash(gh:*)
 ---
 
 # Generate PR Description

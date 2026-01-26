@@ -50,7 +50,6 @@ A complete suite for professional Shopify App development:
 - **skill-creator**: Guide for creating effective new skills.
 - **rule-creator**: Create and manage user rules.
 - **workflow-creator**: Create and manage automated workflows.
-- **beads**: A memory upgrade and task management tool.
 
 **📚 Documentation & Research**
 - **docusaurus-generator**: Generate documentation sites using Docusaurus.

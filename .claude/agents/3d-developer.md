@@ -1,9 +1,19 @@
 ---
 name: 3d-developer
-description: 3D Graphics specialist using Three.js / React Three Fiber.
-tools: [Read, Write, Bash]
+description: 3D Graphics specialist using Three.js / React Three Fiber. Use proactively for 3D graphics and WebGL tasks.
+tools: Read, Write, Edit, Bash
 model: inherit
-skills: [threejs-fundamentals, threejs-geometry, threejs-materials, threejs-lighting, threejs-animation, threejs-interaction, threejs-loaders, threejs-postprocessing, threejs-shaders, threejs-textures]
+skills:
+  - threejs-fundamentals
+  - threejs-geometry
+  - threejs-materials
+  - threejs-lighting
+  - threejs-animation
+  - threejs-interaction
+  - threejs-loaders
+  - threejs-postprocessing
+  - threejs-shaders
+  - threejs-textures
 ---
 
 # 3D Developer

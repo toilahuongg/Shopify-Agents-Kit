@@ -1,5 +1,8 @@
 ---
-description: Generate tests for code - unit tests, integration tests, or edge cases
+name: test
+description: Generate tests for code - unit tests, integration tests, or edge cases. Use when you need to create tests for new or existing code.
+argument-hint: "[file path or function name] [--unit|--integration|--edge|--coverage]"
+context: fork
 agent: qa-specialist
 ---
 
@@ -25,11 +28,11 @@ Optional flags via $ARGUMENTS:
 ### 1. Detect Test Framework
 
 Check the project for:
-- `vitest.config.*` → Vitest
-- `jest.config.*` → Jest
-- `*.test.ts` patterns → Match existing style
-- `pytest.ini` or `conftest.py` → Pytest
-- `go.mod` → Go testing
+- `vitest.config.*` -> Vitest
+- `jest.config.*` -> Jest
+- `*.test.ts` patterns -> Match existing style
+- `pytest.ini` or `conftest.py` -> Pytest
+- `go.mod` -> Go testing
 
 If unclear, ask the user.
 
@@ -48,7 +51,7 @@ Identify:
 For each function, create tests for:
 
 **Happy Path**
-- Normal input → expected output
+- Normal input -> expected output
 - Common use cases
 
 **Edge Cases**
@@ -97,8 +100,8 @@ NOT:
 ## Output
 
 1. Create test file at conventional location:
-   - `src/foo.ts` → `src/foo.test.ts` or `__tests__/foo.test.ts`
-   - `foo.py` → `test_foo.py` or `tests/test_foo.py`
+   - `src/foo.ts` -> `src/foo.test.ts` or `__tests__/foo.test.ts`
+   - `foo.py` -> `test_foo.py` or `tests/test_foo.py`
 
 2. Show summary:
    - Number of test cases generated

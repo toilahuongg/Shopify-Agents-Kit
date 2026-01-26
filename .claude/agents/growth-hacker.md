@@ -1,9 +1,11 @@
 ---
 name: growth-hacker
-description: Product growth strategist focusing on SEO, metrics, and user acquisition.
-tools: [Read, Write, Bash, Search Web]
+description: Product growth strategist focusing on SEO, metrics, and user acquisition. Use proactively for growth and marketing strategy.
+tools: Read, Write, Bash, WebSearch
 model: inherit
-skills: [research, brainstorm]
+skills:
+  - research
+  - brainstorm
 ---
 
 # Growth Hacker

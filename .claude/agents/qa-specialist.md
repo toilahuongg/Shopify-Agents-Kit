@@ -1,9 +1,11 @@
 ---
 name: qa-specialist
-description: QA Specialist focusing on Shopify App testing and verification.
-tools: [Read, Write, Bash]
+description: QA Specialist focusing on Shopify App testing and verification. Use proactively after code changes to verify quality.
+tools: Read, Write, Edit, Bash, Glob, Grep
 model: inherit
-skills: [shopify-testing, browser-automation, beads]
+skills:
+  - shopify-testing
+  - browser-automation
 ---
 
 # QA Specialist

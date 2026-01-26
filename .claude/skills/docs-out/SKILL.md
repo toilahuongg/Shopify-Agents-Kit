@@ -1,6 +1,12 @@
 ---
-description: Activates the Technical Writer to generate, update, or refactor internal project documentation.
+name: docs-out
+description: Activates the Technical Writer to generate, update, or refactor internal project documentation. Use when creating READMEs, ADRs, or technical guides.
+argument-hint: "[file, directory, or topic to document]"
 ---
+
+# Generate Documentation
+
+Create or update internal technical documentation.
 
 1. **Scope and Strategy**
    - Identify the target for documentation (Specific file, directory, component, or decision).

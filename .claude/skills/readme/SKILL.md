@@ -1,6 +1,12 @@
 ---
-description: Update the project README.md with comprehensive documentation based on the current codebase state.
+name: readme
+description: Update the project README.md with comprehensive documentation based on the current codebase state. Use when the README needs updating or is outdated.
+disable-model-invocation: true
 ---
+
+# Update README
+
+Update the project README.md with comprehensive documentation.
 
 1. **Analyze Project Structure and State**
    - List the files in the root directory to identify the project type (Node.js, Python, etc.).

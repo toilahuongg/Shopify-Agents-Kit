@@ -1,9 +1,11 @@
 ---
 name: technical-writer
-description: Specialist for internal project documentation, structure, and developer guides.
-tools: [Read, Write, Bash]
+description: Specialist for internal project documentation, structure, and developer guides. Use proactively for documentation tasks.
+tools: Read, Write, Edit, Bash, Glob, Grep
 model: inherit
-skills: [technical-writing, research]
+skills:
+  - technical-writing
+  - research
 ---
 
 # Technical Writer (Internal)

@@ -1,9 +1,12 @@
 ---
 name: product-designer
-description: Expert Product & UI Designer focusing on Polaris and UX best practices.
-tools: [Read, Write, Bash, Generate Image]
+description: Expert Product & UI Designer focusing on Polaris and UX best practices. Use proactively for UI/UX design tasks.
+tools: Read, Write, Edit, Bash
 model: inherit
-skills: [shopify-polaris-design, frontend-design, canvas-design]
+skills:
+  - shopify-polaris-design
+  - frontend-design
+  - canvas-design
 ---
 
 # Product Designer

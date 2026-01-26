@@ -1,5 +1,8 @@
 ---
-description: Comprehensive system audit - analyze backend architecture, security, performance, and frontend UI/UX with browser automation testing
+name: audit
+description: Comprehensive system audit - analyze backend architecture, security, performance, and frontend UI/UX with browser automation testing. Use when reviewing system health, security posture, or code quality.
+argument-hint: "[--backend|--frontend|--security|<area>] [--quick|--deep]"
+context: fork
 agent: tech-lead
 ---
 
@@ -19,7 +22,6 @@ The user may provide:
 Optional flags via $ARGUMENTS:
 - `--quick` — High-level scan only
 - `--deep` — Comprehensive deep dive
-- `--create-tasks` — Auto-create Beads tasks (default: true)
 - `--live` — Test against live/staging environment
 
 ## Process
@@ -30,7 +32,6 @@ Ask the user if scope is unclear:
 - What areas to focus on? (Full system vs specific modules)
 - Which environment? (Local, staging, production)
 - Depth of analysis? (Quick scan vs deep audit)
-- Should create Beads tasks automatically?
 
 ### 2. Backend Analysis
 
@@ -172,7 +173,7 @@ For each issue:
 #### Frontend Findings (with Browser Test Results)
 ```
 **Test**: Login Flow
-- Status: ❌ FAIL
+- Status: FAIL
 - Issues:
   - Password field not masked properly
   - Error message not accessible
@@ -184,42 +185,11 @@ For each issue:
 
 | Risk | Severity | Likelihood | Priority | Status |
 |------|----------|------------|----------|--------|
-| SQL Injection in search | CRITICAL | Medium | P0 | 🔴 Open |
-| Missing rate limiting | HIGH | High | P1 | 🔴 Open |
-| Poor error handling | MEDIUM | Low | P2 | 🟡 Open |
+| SQL Injection in search | CRITICAL | Medium | P0 | Open |
+| Missing rate limiting | HIGH | High | P1 | Open |
+| Poor error handling | MEDIUM | Low | P2 | Open |
 
-### 6. Create Beads Tasks
-
-If `--create-tasks` is enabled (default):
-
-```bash
-# Create epic for this audit
-bd create "System Audit $(date +%Y-%m-%d): <scope>" -p 0
-
-# Security tasks
-bd create "Security: Fix SQL injection in search endpoint" -p 0
-bd create "Security: Add rate limiting to API" -p 1
-
-# Performance tasks
-bd create "Performance: Optimize N+1 queries in order loading" -p 1
-
-# Frontend tasks
-bd create "Frontend: Fix login form accessibility issues" -p 2
-bd create "Frontend: Improve mobile responsive layout" -p 2
-
-# Link dependencies
-bd dep add <child-id> <epic-id>
-
-# Sync to persistence
-bd sync
-```
-
-Assign tasks to appropriate agents:
-- Security/Backend issues → `@shopify-developer`
-- UI/UX issues → `@product-designer`
-- Testing gaps → `@qa-specialist`
-
-### 7. Provide Next Steps
+### 6. Provide Next Steps
 
 Recommend immediate actions:
 1. **Critical (P0)**: Fix within 24 hours
@@ -234,12 +204,7 @@ Recommend immediate actions:
    - Include all findings with evidence
    - Attach screenshots and recordings
 
-2. **Task Summary**
-   - List all created Beads tasks
-   - Show task IDs and priorities
-   - Display dependency graph
-
-3. **Quick Action Items**
+2. **Quick Action Items**
    - Top 3 critical fixes needed immediately
    - Recommended order of execution
 
@@ -268,6 +233,5 @@ When testing frontend:
 Audit is complete when:
 - [ ] All specified areas analyzed
 - [ ] Findings documented with severity and evidence
-- [ ] Beads tasks created for remediation
 - [ ] Next steps clearly communicated
 - [ ] All browser test recordings saved

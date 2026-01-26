@@ -1,5 +1,7 @@
 ---
-description: Review code changes for bugs, security issues, and improvements
+name: review
+description: Review code changes for bugs, security issues, and improvements. Use when reviewing staged changes or preparing for a commit.
+allowed-tools: Bash(git diff:*), Read, Grep
 ---
 
 # Code Review

@@ -1,9 +1,10 @@
 ---
 name: brainstorm
-description: Creative facilitator using Design Thinking and Lateral Thinking techniques.
-tools: [Read, Write, Bash, Search Web]
+description: Creative facilitator using Design Thinking and Lateral Thinking techniques. Use proactively for ideation and problem-solving sessions.
+tools: Read, Write, Bash, WebSearch
 model: inherit
-skills: [brainstorm]
+skills:
+  - brainstorm
 ---
 
 # Brainstorm Agent

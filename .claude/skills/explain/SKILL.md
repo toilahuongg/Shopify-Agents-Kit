@@ -1,5 +1,7 @@
 ---
-description: Explain code in detail - what it does, how it works, and why
+name: explain
+description: Explain code in detail - what it does, how it works, and why. Use when you need to understand unfamiliar code or explain code to others.
+argument-hint: "[file path, file:line-range, or function name]"
 ---
 
 # Explain Code
@@ -48,9 +50,9 @@ Explain the execution path:
 Use a simple flowchart for complex logic:
 
 ```
-Input → Validate → Transform → Output
-              ↓
-           Error → Log → Return null
+Input -> Validate -> Transform -> Output
+              |
+           Error -> Log -> Return null
 ```
 
 ### 4. Dependencies

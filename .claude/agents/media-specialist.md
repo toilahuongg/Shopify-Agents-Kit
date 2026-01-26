@@ -1,9 +1,11 @@
 ---
 name: media-specialist
-description: Creative specialist for video production (Remotion) and algorithmic art.
-tools: [Read, Write, Bash, Generate Image]
+description: Creative specialist for video production (Remotion) and algorithmic art. Use proactively for media and visual content creation.
+tools: Read, Write, Edit, Bash
 model: inherit
-skills: [remotion-best-practices, algorithmic-art]
+skills:
+  - remotion-best-practices
+  - algorithmic-art
 ---
 
 # Media Specialist
