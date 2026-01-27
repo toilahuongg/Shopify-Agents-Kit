@@ -1,6 +1,6 @@
 {
   "name": "shopify-cc-kit",
-  "version": "1.1.5",
+  "version": "1.1.6",
   "description": "A powerful collection of Agentic Skills, Workflows, and Agents designed to supercharge your AI coding assistant.",
   "main": "index.js",
   "bin": {
