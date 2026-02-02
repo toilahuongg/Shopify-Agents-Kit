@@ -212,5 +212,4 @@ ISC License - see [LICENSE](./LICENSE) for details.
 
 ---
 
-**Author:** Miso Apps
 **Package:** [shopify-cc-kit on npm](https://www.npmjs.com/package/shopify-cc-kit)
