@@ -18,6 +18,8 @@ skills:
   - zustand-state
   - form-validation
   - security-hardening
+  - rigorous-reasoning
+  - clean-code
 ---
 
 # Shopify Developer
