@@ -6,15 +6,112 @@ Detailed rules, character limits, and examples for each listing section based on
 
 ## Table of Contents
 
-1. [App Introduction](#1-app-introduction)
-2. [App Details](#2-app-details)
-3. [Features](#3-features)
-4. [App Card Subtitle](#4-app-card-subtitle)
-5. [Search Terms](#5-search-terms)
-6. [SEO Content](#6-seo-content)
-7. [Testing Instructions](#7-testing-instructions)
-8. [Branding](#8-branding)
-9. [Screenshots & Media](#9-screenshots--media)
+1. [Prohibited Words & Phrases](#prohibited-words--phrases) ⚠️
+2. [App Introduction](#1-app-introduction)
+3. [App Details](#2-app-details)
+4. [Features](#3-features)
+5. [App Card Subtitle](#4-app-card-subtitle)
+6. [Search Terms](#5-search-terms)
+7. [SEO Content](#6-seo-content)
+8. [Testing Instructions](#7-testing-instructions)
+9. [Branding](#8-branding)
+10. [Screenshots & Media](#9-screenshots--media)
+
+---
+
+## Prohibited Words & Phrases ⚠️
+
+Shopify **strictly prohibits** certain language in app listings. Using these words will cause **submission rejection**.
+
+### Outcome Guarantees (ABSOLUTELY PROHIBITED)
+
+Never promise specific results. Shopify requires all claims to be verifiable.
+
+| ❌ PROHIBITED | ✅ ACCEPTABLE ALTERNATIVES |
+|---------------|---------------------------|
+| Increase sales | Help manage sales data |
+| Boost revenue | Revenue tracking tools |
+| Grow your business | Business management features |
+| Double your conversions | Conversion optimization tools |
+| 10x your traffic | Traffic analytics dashboard |
+| Guaranteed results | Reliable performance |
+| Save money | Cost management features |
+| Reduce costs | Expense tracking |
+| Increase profits | Profit reporting |
+| Higher ROI | ROI calculation tools |
+| More customers | Customer management |
+| Improve rankings | Ranking monitoring |
+| Better SEO performance | SEO analysis tools |
+| Grow email list | Email list management |
+| More followers | Social media integration |
+| Increase engagement | Engagement tracking |
+
+### Superlatives & Comparative Language
+
+| ❌ PROHIBITED | ✅ ACCEPTABLE ALTERNATIVES |
+|---------------|---------------------------|
+| Best | Professional |
+| #1 | Leading |
+| Top rated | Highly rated |
+| World's best | Industry-standard |
+| Superior | Advanced |
+| Unmatched | Comprehensive |
+| Unbeatable | Competitive |
+| Fastest | Fast / Efficient |
+| Easiest | Easy / User-friendly |
+| Perfect | Optimized |
+| Ultimate | Complete |
+| Revolutionary | Innovative |
+| Groundbreaking | New / Modern |
+
+### Time-Based Claims
+
+| ❌ PROHIBITED | ✅ ACCEPTABLE ALTERNATIVES |
+|---------------|---------------------------|
+| Instant | Quick |
+| Immediately | Quickly |
+| In seconds | In minutes |
+| Real-time* | Live updates |
+| 24/7* | Always available |
+
+*Only acceptable if technically true (e.g., actual real-time data sync)
+
+### Marketing Filler Words
+
+| ❌ AVOID | ✅ USE INSTEAD |
+|----------|----------------|
+| Amazing | Specific feature description |
+| Incredible | Clear benefit statement |
+| Awesome | Functional description |
+| Magical | Practical |
+| Miracle | Effective |
+
+### Vague or Unsubstantiated Claims
+
+| ❌ AVOID |
+|----------|
+| "Transform your business" (too vague) |
+| "Change everything" (unspecific) |
+| "Never worry about X again" (impossible guarantee) |
+| "Effortless" (nothing is truly effortless) |
+
+### Required Action: Always Verify
+
+When writing listing content, ask:
+1. Is this claim measurable?
+2. Can the app actually deliver this result?
+3. Is there evidence to support this statement?
+
+**If the answer is "no" to any question, rewrite the section.**
+
+### Free/Freemium Pricing Language
+
+| ❌ AVOID | ✅ USE INSTEAD |
+|----------|----------------|
+| "Free forever" | "Free plan available" |
+| "100% free" | "Free tier" |
+| "No credit card required" | "Start for free" |
+| "Unlimited free" | "Free trial available" |
 
 ---
 

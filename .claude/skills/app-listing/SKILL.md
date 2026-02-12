@@ -40,13 +40,30 @@ See [references/shopify-listing-guide.md](references/shopify-listing-guide.md) f
 
 Before delivering, verify:
 
-- [ ] All character limits respected
+- [ ] All character limits respected (use [count-characters.sh](count-characters.sh))
+- [ ] Review [Prohibited Words & Phrases](references/shopify-listing-guide.md#prohibited-words--phrases-) - NO outcome guarantees, superlatives, or unverifiable claims
 - [ ] No keyword stuffing
-- [ ] No outcome guarantees or unverifiable claims
 - [ ] Benefits-focused language (not feature-focused)
 - [ ] Testing instructions are clear, step-by-step, and include prerequisites
 - [ ] SEO title follows Google's title tag best practices
 - [ ] Search terms use complete words, one idea per term
+
+### 3.1. Character Counting
+
+Use the provided script to verify character counts:
+
+```bash
+# Count characters for a specific section
+./count-characters.sh introduction "Your app introduction text"
+./count-characters.sh details "Your app details description"
+./count-characters.sh feature "Real-time sales analytics"
+./count-characters.sh subtitle "Better order management tools"
+./count-characters.sh seo_title "My App - Order Management"
+./count-characters.sh seo_meta "Description for search results"
+
+# Show help for all options
+./count-characters.sh --help
+```
 
 ### 4. Output Format
 
