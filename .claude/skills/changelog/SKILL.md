@@ -76,22 +76,24 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 Map commit prefixes to changelog categories:
 
-| Commit Prefix | Changelog Category |
-|---------------|-------------------|
-| `feat:` | **Added** |
-| `fix:` | **Fixed** |
-| `docs:` | **Changed** (Documentation) |
-| `style:` | **Changed** (Formatting) |
-| `refactor:` | **Changed** |
-| `perf:` | **Changed** (Performance) |
-| `test:` | (Usually omitted) |
-| `build:` | **Changed** (Build system) |
-| `ci:` | (Usually omitted) |
-| `chore:` | (Usually omitted) |
-| `revert:` | **Removed** or **Fixed** |
-| `security:` / `vuln:` | **Security** |
-| `deprecate:` | **Deprecated** |
-| `remove:` / `breaking:` | **Removed** |
+```
+Commit Prefix        →  Changelog Category
+─────────────────────────────────────────────
+feat:                →  Added
+fix:                 →  Fixed
+docs:                →  Changed (Documentation)
+style:               →  Changed (Formatting)
+refactor:            →  Changed
+perf:                →  Changed (Performance)
+test:                →  (Usually omitted)
+build:               →  Changed (Build system)
+ci:                  →  (Usually omitted)
+chore:               →  (Usually omitted)
+revert:              →  Removed or Fixed
+security: / vuln:    →  Security
+deprecate:           →  Deprecated
+remove: / breaking:  →  Removed
+```
 
 ## Generation Process
 
@@ -176,12 +178,14 @@ function generateChangelog(entries: ChangeEntry[], version: string, date: string
 
 Based on changes, suggest version bump:
 
-| Change Type | Version Bump | Example |
-|-------------|--------------|---------|
-| Breaking changes (`!`) | **MAJOR** | 1.0.0 → 2.0.0 |
-| New features (`feat`) | **MINOR** | 1.0.0 → 1.1.0 |
-| Bug fixes (`fix`) | **PATCH** | 1.0.0 → 1.0.1 |
-| Other changes | **PATCH** | 1.0.0 → 1.0.1 |
+```
+Change Type                →  Version Bump    →  Example
+────────────────────────────────────────────────────────────
+Breaking changes (!)       →  MAJOR           →  1.0.0 → 2.0.0
+New features (feat)        →  MINOR           →  1.0.0 → 1.1.0
+Bug fixes (fix)            →  PATCH           →  1.0.0 → 1.0.1
+Other changes              →  PATCH           →  1.0.0 → 1.0.1
+```
 
 ```typescript
 function suggestVersionBump(entries: ChangeEntry[], currentVersion: string): string {

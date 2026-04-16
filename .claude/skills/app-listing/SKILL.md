@@ -26,15 +26,15 @@ See [references/shopify-listing-guide.md](references/shopify-listing-guide.md) f
 
 #### Sections to generate:
 
-| # | Section | Limit |
-|---|---------|-------|
-| 1 | App Introduction | 100 chars |
-| 2 | App Details | 500 chars |
-| 3 | Features | 80 chars each, up to 8 |
-| 4 | App Card Subtitle | ~80 chars |
-| 5 | App Store Search Terms | 5 terms, one idea per term |
-| 6 | Web Search Content (SEO) | Title <60 chars, Meta <155 chars |
-| 7 | Testing Instructions | Step-by-step, bullet points |
+| # | Section | Limit | Format |
+|---|---------|-------|--------|
+| 1 | App Introduction | 100 chars | Plain text |
+| 2 | App Details | 500 chars | **Plain text only - NO line breaks or bullets** |
+| 3 | Features | 80 chars each, up to 8 | Separate items |
+| 4 | App Card Subtitle | ~80 chars | Plain text |
+| 5 | App Store Search Terms | 5 terms, one idea per term | Comma-separated list |
+| 6 | Web Search Content (SEO) | Title <60 chars, Meta <155 chars | Plain text |
+| 7 | Testing Instructions | Step-by-step, bullet points | Numbered steps with bullets |
 
 ### 3. Quality Checklist
 
@@ -42,6 +42,7 @@ Before delivering, verify:
 
 - [ ] All character limits respected (use [count-characters.sh](count-characters.sh))
 - [ ] Review [Prohibited Words & Phrases](references/shopify-listing-guide.md#prohibited-words--phrases-) - NO outcome guarantees, superlatives, or unverifiable claims
+- [ ] **App Details is plain text with NO line breaks or bullet points** (Shopify removes all formatting)
 - [ ] No keyword stuffing
 - [ ] Benefits-focused language (not feature-focused)
 - [ ] Testing instructions are clear, step-by-step, and include prerequisites

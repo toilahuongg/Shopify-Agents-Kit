@@ -146,18 +146,29 @@ Clearly highlight the benefits merchants can expect. Tie your unique offering to
 
 **Limit:** 500 characters
 
+**IMPORTANT:** App Details must be **plain text** - NO line breaks, NO bullet points, NO numbered lists. Write as a single continuous paragraph.
+
 Describe functional elements and what makes the app unique.
 
 ### DO
+- Write as a single paragraph (no line breaks)
 - Focus on what the app does and how it solves problems
 - Mention unique differentiators
 - Use clear, concise language
 
 ### DON'T
+- **Use line breaks or bullet points** (Shopify removes all formatting)
 - Use excessive marketing language
 - Keyword stuff
 - Make outcome guarantees
 - Include support info, links, or testimonials (those have their own fields)
+
+### Examples
+
+| ✅ DO (Plain Text) | ❌ DON'T (Formatted) |
+|---------------------|----------------------|
+| We package and ship your orders. Fast, simple fulfillment can boost sales and delight customers. Our app integrates with major carriers to provide tracking, automated shipping labels, and inventory sync across all your sales channels. | We package and ship your orders. Fast, simple fulfillment can boost sales and delight customers.<br><br>Features:<br>• Shipping labels<br>• Carrier integration<br>• Inventory sync |
+| Create print-on-demand custom products with our design tool. Upload your artwork, customize product options, and we handle production and shipping. Perfect for merchandise, branded items, and personalized gifts. | Create print-on-demand custom products.<br><br>**Key Features:**<br>- Design tool upload<br>- Custom product options<br>- Production & shipping |
 
 ---
 
@@ -179,7 +190,7 @@ Describe the functionality, not the technical mechanics. Keep features short and
 
 ## 4. App Card Subtitle
 
-**Limit:** ~80 characters
+**Limit:** ~62 characters
 
 Highlight benefits to merchants rather than just describing functions.
 
