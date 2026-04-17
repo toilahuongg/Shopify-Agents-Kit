@@ -10,7 +10,7 @@ const SOURCE_DIR = '.claude';
 program
   .name('shopify-cc-kit')
   .description('Sync Shopify Claude Code Kit skills and agents to your project')
-  .version('1.1.2')
+  .version('1.2.0')
   .option('-f, --force', 'Overwrite existing files without prompting')
   .option('-a, --agents-only', 'Only sync agents')
   .option('-s, --skills-only', 'Only sync skills')

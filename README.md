@@ -19,10 +19,8 @@ npm install shopify-cc-kit
 
 ### Setup
 
-Copy the `.claude` directory to your project root:
-
 ```bash
-cp -r node_modules/shopify-cc-kit/.claude .
+npx shopify-cc-kit@latest
 ```
 
 Or use in any Claude Code / Cursor environment by referencing the installed package.
