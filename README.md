@@ -3,7 +3,7 @@
 [![npm version](https://img.shields.io/npm/v/shopify-cc-kit.svg)](https://www.npmjs.com/package/shopify-cc-kit)
 [![License: ISC](https://img.shields.io/badge/License-ISC-blue.svg)](https://opensource.org/licenses/ISC)
 
-A powerful collection of **79 Skills** and **11 Agents** designed to supercharge your AI coding assistant for Shopify app development and beyond.
+A powerful collection of **93 Skills** and **11 Agents** designed to supercharge your AI coding assistant for Shopify app development and beyond.
 
 ## Quick Start
 
@@ -49,7 +49,7 @@ Located in `.claude/agents/`, these are specialized personas equipped with speci
 | **growth-hacker** | Product growth and user acquisition |
 | **brainstorm** | Creative problem solving facilitator |
 
-### Skills (79 Total)
+### Skills (93 Total)
 
 Located in `.claude/skills/`, organized by category:
 
@@ -154,6 +154,25 @@ Located in `.claude/skills/`, organized by category:
 | `brainstorm` | Creative brainstorming |
 | `rigorous-reasoning` | Philosophical reasoning |
 
+#### Matt Pocock's Planning & Development Skills (14 skills)
+
+| Skill | Description |
+|-------|-------------|
+| `write-a-prd` | Create PRD through user interview and codebase exploration |
+| `prd-to-plan` | Turn PRD into multi-phase implementation plan |
+| `prd-to-issues` | Break PRD into GitHub issues using tracer-bullet slices |
+| `grill-me` | Interview user relentlessly about a plan or design |
+| `design-an-interface` | Generate multiple radically different interface designs |
+| `request-refactor-plan` | Create detailed refactor plan with tiny commits |
+| `tdd` | Test-driven development with red-green-refactor loop |
+| `triage-issue` | Triage bugs by exploring codebase to find root cause |
+| `improve-codebase-architecture` | Find opportunities for architectural improvement |
+| `setup-pre-commit` | Set up Husky pre-commit hooks with lint-staged |
+| `git-guardrails-claude-code` | Block dangerous git commands before they execute |
+| `edit-article` | Edit and improve articles by restructuring sections |
+| `ubiquitous-language` | Extract DDD-style ubiquitous language glossary |
+| `obsidian-vault` | Search, create, and manage notes in Obsidian |
+
 #### Meta-Skills (5 skills)
 
 | Skill | Description |
@@ -191,6 +210,10 @@ Quick shortcuts for common tasks:
 | `/explain` | Explain code in detail |
 | `/design` | Create UI mockups |
 | `/brainstorm` | Facilitate brainstorming |
+| `/write-a-prd` | Create product requirements document |
+| `/prd-to-plan` | Convert PRD to implementation plan |
+| `/tdd` | Test-driven development workflow |
+| `/grill-me` | Stress-test a plan or design |
 
 ## Project Structure
 
@@ -201,15 +224,122 @@ Quick shortcuts for common tasks:
 │   ├── tech-lead.md
 │   ├── product-designer.md
 │   └── ...
-├── skills/           # 79 Skills & Capabilities
+├── skills/           # 93 Skills & Capabilities
 │   ├── shopify-admin/          # Official Shopify skills
 │   ├── shopify-custom-data/    # with validation scripts
 │   ├── shopify-polaris-*/
-│   ├── zustand-state/
-│   ├── form-validation/
+│   ├── write-a-prd/            # Matt Pocock's skills
+│   ├── tdd/
 │   └── ...
 └── settings.local.json
 ```
+
+## Ship Fast Workflow
+
+The fastest path from idea to published Shopify app, using this kit's skills and agents.
+
+### Phase 1: Define (30 min)
+
+```bash
+# 1. Create Product Requirements Document
+/write-a-prd
+
+# 2. Stress-test your idea
+/grill-me
+
+# 3. Convert PRD to implementation plan
+/prd-to-plan
+```
+
+### Phase 2: Scaffold (10 min)
+
+```bash
+# Initialize Shopify app with Remix template
+shopify app init
+
+# Generate extensions as needed
+shopify app generate extension
+```
+
+**Skills auto-activated:** `shopify-remix-template`, `shopify-onboarding-dev`
+
+### Phase 3: Build (Hours → Days)
+
+| Task | Command/Skill |
+|------|---------------|
+| **App Home UI** | `shopify-polaris-app-home` - Polaris web components with validation |
+| **Admin Extensions** | `shopify-polaris-admin-extensions` - Action/block extensions |
+| **Checkout Extensions** | `shopify-polaris-checkout-extensions` - Checkout UI |
+| **Custom Data** | `shopify-custom-data` - Metafields/Metaobjects via TOML |
+| **Backend Logic** | `shopify-functions` - Discounts, Shipping, Payment customization |
+| **Billing** | `shopify-billing` - Subscriptions, usage charges |
+| **Webhooks** | `shopify-webhooks` - Event handling with HMAC verification |
+| **API Calls** | `shopify-admin` - GraphQL with search & validation |
+
+```bash
+# Test-driven development
+/tdd
+
+# Design multiple UI approaches
+/design-an-interface
+```
+
+### Phase 4: Quality (1-2 hours)
+
+```bash
+# Security audit
+"Use tech-lead agent to audit this codebase"
+
+# Pre-submission compliance check
+/shopify-app-review
+
+# Run tests
+shopify app dev
+```
+
+**Skills auto-activated:** `shopify-testing`, `security-hardening`
+
+### Phase 5: Ship (30 min)
+
+```bash
+# 1. Deploy app
+shopify app deploy
+
+# 2. Generate App Store listing
+/app-listing
+
+# 3. Generate changelog
+/changelog
+
+# 4. Create release
+/release
+```
+
+### Phase 6: Grow (Ongoing)
+
+```bash
+# User documentation site
+/docusaurus-generator
+
+# Growth strategy
+"Use growth-hacker agent for user acquisition plan"
+
+# Iterate based on feedback
+/triage-issue
+```
+
+### Quick Reference
+
+| Stage | Time | Key Commands |
+|-------|------|--------------|
+| Define | 30m | `/write-a-prd` → `/grill-me` → `/prd-to-plan` |
+| Scaffold | 10m | `shopify app init` → `shopify app generate extension` |
+| Build | 1-5d | Skills auto-load based on context |
+| Quality | 1-2h | `/shopify-app-review` → tech-lead audit |
+| Ship | 30m | `shopify app deploy` → `/app-listing` → `/release` |
+| Grow | ∞ | `/docusaurus-generator` → growth-hacker agent |
+
+---
 
 ## Usage
 
