@@ -1,0 +1,4 @@
+interface:
+  display_name: "Shopify App Logo"
+  short_description: "Create Shopify App Store icons"
+  default_prompt: "Use $shopify-app-logo to create a Shopify App Store app icon for my app."

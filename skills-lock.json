@@ -66,6 +66,12 @@
       "sourceType": "github",
       "computedHash": "7fbe93632f1fadad7d197e376b3a6e1297db4540083e84bf58db5869ecf4af1b"
     },
+    "shopify-app-store-review": {
+      "source": "Shopify/shopify-ai-toolkit",
+      "sourceType": "github",
+      "skillPath": "skills/shopify-app-store-review/SKILL.md",
+      "computedHash": "f3229c0e9089187510dfb459829eda815298aa69c66cda9f63021289298ebfa1"
+    },
     "shopify-custom-data": {
       "source": "Shopify/shopify-ai-toolkit",
       "sourceType": "github",

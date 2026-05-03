@@ -1,0 +1,4 @@
+interface:
+  display_name: "Shopify Feature Image"
+  short_description: "Create App Store feature images"
+  default_prompt: "Use $shopify-feature-image to create a Shopify App Store feature image for my app."
