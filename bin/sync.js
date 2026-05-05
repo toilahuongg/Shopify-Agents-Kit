@@ -2,6 +2,7 @@
 
 const fs = require('fs-extra');
 const path = require('path');
+const { execSync } = require('child_process');
 const { program } = require('commander');
 
 const PACKAGE_NAME = 'shopify-cc-kit';
@@ -9,12 +10,11 @@ const SOURCE_DIR = '.claude';
 
 program
   .name('shopify-cc-kit')
-  .description('Sync Shopify Claude Code Kit skills and agents to your project')
-  .version('1.2.0')
+  .description('Sync Shopify Claude Code Kit skills to your project')
+  .version('1.4.0')
   .option('-f, --force', 'Overwrite existing files without prompting')
-  .option('-a, --agents-only', 'Only sync agents')
-  .option('-s, --skills-only', 'Only sync skills')
   .option('--dry-run', 'Show what would be synced without making changes')
+  .option('--no-external', 'Skip installing external skills from Shopify and Matt Pocock')
   .action(async (options) => {
     try {
       const sourceDir = path.join(__dirname, '..', SOURCE_DIR);
@@ -27,7 +27,6 @@ program
         process.exit(1);
       }
 
-      // Check if target already exists
       const targetExists = fs.existsSync(targetDir);
 
       if (options.dryRun) {
@@ -39,72 +38,65 @@ program
         console.log('   Use --force to overwrite existing files.\n');
       }
 
-      // Determine what to sync
-      let itemsToSync = [];
-
-      if (options.agentsOnly) {
-        itemsToSync.push({ src: 'agents', label: 'Agents' });
-      } else if (options.skillsOnly) {
-        itemsToSync.push({ src: 'skills', label: 'Skills' });
-      } else {
-        itemsToSync = [
-          { src: 'agents', label: 'Agents' },
-          { src: 'skills', label: 'Skills' },
-          { src: 'settings.local.json', label: 'Settings', isFile: true }
-        ];
-      }
-
-      // Count items
-      const agentsDir = path.join(sourceDir, 'agents');
       const skillsDir = path.join(sourceDir, 'skills');
-
-      const agentCount = fs.existsSync(agentsDir)
-        ? fs.readdirSync(agentsDir).filter(f => f.endsWith('.md')).length
-        : 0;
       const skillCount = fs.existsSync(skillsDir)
         ? fs.readdirSync(skillsDir).filter(f => fs.statSync(path.join(skillsDir, f)).isDirectory()).length
         : 0;
 
       console.log(`📊 Package contents:`);
-      console.log(`   • ${agentCount} Agents`);
       console.log(`   • ${skillCount} Skills\n`);
 
       if (options.dryRun) {
         console.log(`📁 Would sync to: ${targetDir}\n`);
-        for (const item of itemsToSync) {
-          console.log(`   ✓ ${item.label}`);
-        }
+        console.log('   ✓ Skills');
         console.log('\n✅ Dry run complete. Use without --dry-run to apply changes.');
         return;
       }
 
       console.log(`📁 Syncing to: ${targetDir}\n`);
 
-      // Ensure target directory exists
       await fs.ensureDir(targetDir);
 
-      // Sync each item
-      for (const item of itemsToSync) {
-        const srcPath = path.join(sourceDir, item.src);
-        const destPath = path.join(targetDir, item.src);
+      const srcPath = path.join(sourceDir, 'skills');
+      const destPath = path.join(targetDir, 'skills');
 
-        if (!fs.existsSync(srcPath)) {
-          console.log(`   ⏭️  Skipping ${item.label} (not found)`);
-          continue;
-        }
-
+      if (fs.existsSync(srcPath)) {
         await fs.copy(srcPath, destPath, {
           overwrite: options.force || !targetExists,
           errorOnExist: false
         });
-
-        console.log(`   ✅ ${item.label}`);
+        console.log('   ✅ Skills');
+      } else {
+        console.log('   ⏭️  Skipping Skills (not found)');
       }
 
       console.log(`\n🎉 Successfully synced ${PACKAGE_NAME} to ${SOURCE_DIR}/`);
+
+      // Install external skills
+      if (options.external !== false) {
+        console.log('\n📦 Installing external skills...\n');
+        const externalSkills = [
+          { name: 'Shopify AI Toolkit', source: 'Shopify/shopify-ai-toolkit' },
+          { name: 'Matt Pocock Skills', source: 'mattpocock/skills' }
+        ];
+
+        for (const { name, source } of externalSkills) {
+          try {
+            console.log(`   Installing ${name}...`);
+            execSync(`npx skills@latest add ${source}`, {
+              cwd: process.cwd(),
+              stdio: 'inherit'
+            });
+            console.log(`   ✅ ${name}`);
+          } catch (err) {
+            console.log(`   ⚠️  ${name} installation failed: ${err.message}`);
+          }
+        }
+        console.log('');
+      }
+
       console.log('\n📖 Quick Start:');
-      console.log('   • Use agents: "Act as the shopify-developer agent"');
-      console.log('   • Use commands: /git-cm, /test, /review, /changelog');
+      console.log('   • Use commands: /git-cm, /changelog');
       console.log('   • View all: ls .claude/skills/\n');
 
     } catch (err) {
